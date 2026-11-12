@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Confirm your email address</title>
+  <link rel="stylesheet" href="/assets/css/base.css">
+</head>
+<body data-title-key="confirm.title">
+<main>
+  <div class="topbar">
+    <span class="brand">UserHub</span>
+    <div>
+      <label for="lang" class="visually-hidden" data-i18n="lang.label">Language</label>
+      <select id="lang"><option value="en">English</option><option value="de">Deutsch</option></select>
+    </div>
+  </div>
+  <div class="card">
+    <p id="state-loading" data-i18n="setup.loading">Checking the link ...</p>
+    <section id="state-invalid" hidden>
+      <h1 data-i18n="setup.invalid.heading">This link does not work</h1>
+      <p data-i18n="setup.invalid.text"></p>
+      <p><a href="/login" data-i18n="link.backToSignin">Back to sign in</a></p>
+    </section>
+    <section id="step-confirm" hidden>
+      <h1 data-i18n="confirm.heading">Confirm your email address</h1>
+      <p class="muted" data-i18n="confirm.intro"></p>
+      <p id="error" class="error" role="alert"></p>
+      <button type="button" id="confirm" data-i18n="action.confirm">Confirm email address</button>
+    </section>
+    <section id="step-done" hidden>
+      <h1 data-i18n="confirm.doneHeading">Email address confirmed</h1>
+      <p data-i18n="confirm.done"></p>
+      <a class="button" href="/login" data-i18n="action.signin">Sign in</a>
+    </section>
+  </div>
+</main>
+<script type="module" src="/assets/js/confirm.js"></script>
+</body>
+</html>

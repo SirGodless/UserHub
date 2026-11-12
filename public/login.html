@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Sign in</title>
+  <link rel="stylesheet" href="/assets/css/base.css">
+</head>
+<body data-title-key="login.title">
+<main>
+  <div class="topbar">
+    <span class="brand">UserHub</span>
+    <div>
+      <label for="lang" class="visually-hidden" data-i18n="lang.label">Language</label>
+      <select id="lang"><option value="en">English</option><option value="de">Deutsch</option></select>
+    </div>
+  </div>
+  <div class="card">
+    <form id="step-password" novalidate>
+      <h1 data-i18n="login.heading">Sign in</h1>
+      <label for="identifier" data-i18n="field.identifier">Username or email</label>
+      <input id="identifier" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+      <label for="password" data-i18n="field.password">Password</label>
+      <input id="password" type="password" autocomplete="current-password" required>
+      <label class="check"><input type="checkbox" id="remember"><span data-i18n="field.remember">Stay signed in</span></label>
+      <p id="password-error" class="error" role="alert"></p>
+      <div class="actions">
+        <button type="submit" data-i18n="action.signin">Sign in</button>
+      </div>
+      <p><a href="/forgot" data-i18n="login.forgot">Forgot your password?</a></p>
+    </form>
+
+    <form id="step-code" hidden novalidate>
+      <h1 data-i18n="login.totp.heading">Two-factor authentication</h1>
+      <p class="muted" data-i18n="login.totp.intro"></p>
+      <label for="code" data-i18n="field.code">Code</label>
+      <input id="code" class="code" type="text" autocomplete="one-time-code" autocapitalize="none" spellcheck="false" required>
+      <p id="code-error" class="error" role="alert"></p>
+      <button type="submit" data-i18n="action.verify">Verify</button>
+    </form>
+
+    <div id="resend-box" hidden>
+      <p class="muted" data-i18n="login.resend.intro"></p>
+      <form id="resend-form" novalidate>
+        <label for="resend-email" data-i18n="field.email">Email address</label>
+        <input id="resend-email" type="email" autocomplete="email">
+        <p id="resend-error" class="error" role="alert"></p>
+        <p id="resend-done" class="muted" hidden data-i18n="login.resend.done"></p>
+        <button type="submit" class="secondary" data-i18n="action.resend">Send confirmation email</button>
+      </form>
+    </div>
+  </div>
+</main>
+<script type="module" src="/assets/js/login.js"></script>
+</body>
+</html>
