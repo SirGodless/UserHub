@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Set up the first admin</title>
+  <link rel="stylesheet" href="/assets/css/base.css">
+</head>
+<body data-title-key="setup.title">
+<main>
+  <div class="topbar">
+    <span class="brand">UserHub</span>
+    <div>
+      <label for="lang" class="visually-hidden" data-i18n="lang.label">Language</label>
+      <select id="lang"><option value="en">English</option><option value="de">Deutsch</option></select>
+    </div>
+  </div>
+
+  <div class="card">
+    <p id="state-loading" data-i18n="setup.loading">Checking the link ...</p>
+
+    <section id="state-invalid" hidden>
+      <h1 data-i18n="setup.invalid.heading">This link does not work</h1>
+      <p data-i18n="setup.invalid.text">The link is invalid, expired or already used.</p>
+    </section>
+
+    <!-- Schritt 1: Account -->
+    <form id="step-account" hidden novalidate>
+      <h1 data-i18n="setup.account.heading">Create the admin account</h1>
+      <p class="muted" data-i18n="setup.account.intro"></p>
+
+      <label for="username" data-i18n="field.username">Username</label>
+      <input id="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required aria-describedby="username-hint">
+      <p id="username-hint" class="muted" data-i18n="field.username.hint"></p>
+
+      <label for="email" data-i18n="field.email">Email address</label>
+      <input id="email" type="email" autocomplete="email" required>
+
+      <label for="password" data-i18n="field.password">Password</label>
+      <input id="password" type="password" autocomplete="new-password" required aria-describedby="password-hint">
+      <p id="password-hint" class="muted" data-i18n="field.password.hint"></p>
+
+      <label for="password2" data-i18n="field.passwordConfirm">Repeat password</label>
+      <input id="password2" type="password" autocomplete="new-password" required>
+
+      <p id="account-error" class="error" role="alert"></p>
+      <button type="submit" data-i18n="action.continue">Continue</button>
+    </form>
+
+    <!-- Schritt 2: TOTP -->
+    <form id="step-totp" hidden novalidate>
+      <h1 data-i18n="setup.totp.heading">Set up two-factor authentication</h1>
+      <p class="muted" data-i18n="setup.totp.intro"></p>
+      <div id="qr" class="qr" role="img" data-i18n-aria-label="setup.totp.qr.alt"></div>
+      <p class="muted" data-i18n="setup.totp.manual"></p>
+      <p id="secret" class="secret"></p>
+
+      <label for="totp" data-i18n="field.totpCode">6 digit code</label>
+      <input id="totp" class="code" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="one-time-code" required>
+
+      <p id="totp-error" class="error" role="alert"></p>
+      <div class="actions">
+        <button type="button" id="totp-back" class="secondary" data-i18n="action.back">Back</button>
+        <button type="submit" data-i18n="action.finish">Create admin account</button>
+      </div>
+    </form>
+
+    <!-- Schritt 3: Wiederherstellungscodes -->
+    <section id="step-done" hidden>
+      <h1 data-i18n="setup.done.heading">Admin account created</h1>
+      <p data-i18n="setup.done.intro"></p>
+      <p><strong data-i18n="setup.done.warning"></strong></p>
+      <ol id="codes" class="codes"></ol>
+      <div class="actions">
+        <button type="button" id="copy" class="secondary" data-i18n="action.copy">Copy codes</button>
+        <button type="button" id="download" class="secondary" data-i18n="action.download">Download as text file</button>
+      </div>
+      <label class="check"><input type="checkbox" id="saved"><span data-i18n="setup.done.confirm"></span></label>
+      <a id="next" class="button" href="/" aria-disabled="true" data-i18n="action.next">Continue</a>
+    </section>
+  </div>
+</main>
+<script type="module" src="/assets/js/setup.js"></script>
+</body>
+</html>
