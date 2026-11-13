@@ -5,7 +5,7 @@ Admins, Anmelden, Passwort vergessen, E-Mail bestätigen und eine Startseite. Hu
 Einfaches HTML, CSS und JavaScript ohne Framework. Die verbindliche Spezifikation steht in
 `../AuthenticationService/CLAUDE.md`.
 
-**Stand:** Etappe 2 und die Zwischenetappe zu Struktur und NIST.
+**Stand:** Etappe 3. Dazu kommt die Seite "Kein Zugang" (`/access-denied`) und der Rücksprung nach dem Login zu einem Dienst.
 
 ## Ordnerübersicht
 
@@ -14,7 +14,7 @@ Einfaches HTML, CSS und JavaScript ohne Framework. Die verbindliche Spezifikatio
 | `public/` | Alles, was der Webserver ausliefert. Die Startseite (`index.html`) liegt direkt hier. |
 | `public/pages/` | Eine HTML-Datei pro Seite. Der Dateiname entspricht der Adresse (`login.html` für `/login`). |
 | `public/assets/js/pages/` | Ein Skript pro Seite, gleicher Name wie die Seite. Es enthält nur, was diese Seite tut. |
-| `public/assets/js/shared/` | Was mehrere Seiten brauchen: Aufrufe an das Backend (`api.js`), Übersetzung (`i18n.js`), "Passwort anzeigen" (`password-toggle.js`). |
+| `public/assets/js/shared/` | Was mehrere Seiten brauchen: Aufrufe an das Backend (`api.js`), Übersetzung (`i18n.js`), "Passwort anzeigen" (`password-toggle.js`), Rücksprung nach dem Login zu einem Dienst (`redirect.js`). |
 | `public/assets/css/` | Gestaltung: Farben (`tokens.css`), Seitenaufbau (`layout.css`), Formulare (`forms.css`), Setup-Seite (`setup.css`). |
 | `public/assets/i18n/` | Texte nach Sprache und Thema (`en/login.json`, `de/login.json`, ...). Jede Seite nennt im `body`, welche Themen sie lädt. |
 | `public/assets/vendor/` | Fremdbibliotheken mit Herkunft und Lizenz (QR-Code). Kein CDN, alles wird selbst ausgeliefert. |

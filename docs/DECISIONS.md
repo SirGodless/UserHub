@@ -7,6 +7,6 @@ Für dieses Repo sind vor allem relevant:
 - `ui.md`: Webserver (nginx ohne Root), selbst gehostete QR-Bibliothek, strenge Sicherheits-Header, Sprachumschalter, Passwortfelder nach NIST.
 - `code-structure.md`: Aufbau von `public/` (Seiten, Skripte, CSS, Sprachdateien nach Thema) und warum.
 
-Kurz zum Stand: Seiten `/login`, `/forgot`, `/reset/<token>`, `/confirm/<token>`, `/setup/<token>` und eine Startseite mit
+Kurz zum Stand: Seiten `/access-denied` (ab Etappe 3), `/login`, `/forgot`, `/reset/<token>`, `/confirm/<token>`, `/setup/<token>` und eine Startseite mit
 Anmelde-Status. Die UI spricht nur mit `/api/auth/*` und `/api/setup/*` (gleiche Adresse, Cookies und CSRF-Header über
 `public/assets/js/shared/api.js`). Links in Mails verbrauchen sich erst auf Knopfdruck.

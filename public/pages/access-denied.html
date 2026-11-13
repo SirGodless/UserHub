@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>No access</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+</head>
+<body data-title-key="access.title" data-i18n-files="common access">
+<main>
+  <div class="topbar">
+    <span class="brand">UserHub</span>
+    <div>
+      <label for="lang" class="visually-hidden" data-i18n="lang.label">Language</label>
+      <select id="lang"><option value="en">English</option><option value="de">Deutsch</option></select>
+    </div>
+  </div>
+  <div class="card">
+    <h1 data-i18n="access.heading">No access</h1>
+    <p><span data-i18n="access.text">Your account is not allowed to use this service:</span> <strong id="service"></strong></p>
+    <p class="muted" data-i18n="access.hint">If you think this is a mistake, ask the administrator to give your account access.</p>
+    <a class="button" href="/" data-i18n="access.back">Back to the start page</a>
+  </div>
+</main>
+<script type="module" src="/assets/js/pages/access-denied.js"></script>
+</body>
+</html>

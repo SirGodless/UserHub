@@ -1,6 +1,7 @@
 import { initPasswordToggles } from "/assets/js/shared/password-toggle.js";
 import { initI18n, t } from "/assets/js/shared/i18n.js";
 import { api, show, useViews, setError } from "/assets/js/shared/api.js";
+import { afterLoginTarget } from "/assets/js/shared/redirect.js";
 
 const $ = (id) => document.getElementById(id);
 useViews(["step-password", "step-code"]);
@@ -9,7 +10,7 @@ async function start() {
   await initI18n();
   initPasswordToggles();
   const me = await api("GET", "/api/auth/me"); // holt auch das CSRF-Cookie
-  if (me.ok) location.href = "/";
+  if (me.ok) location.href = afterLoginTarget();
 }
 
 $("step-password").addEventListener("submit", async (e) => {
@@ -25,7 +26,7 @@ $("step-password").addEventListener("submit", async (e) => {
     show("step-code");
     $("code").focus();
   } else if (res.ok) {
-    location.href = "/";
+    location.href = afterLoginTarget();
   } else {
     const code = res.data.error || "server_error";
     setError(t, "password-error", code);
@@ -37,7 +38,7 @@ $("step-code").addEventListener("submit", async (e) => {
   e.preventDefault();
   setError(t, "code-error", null);
   const res = await api("POST", "/api/auth/login/second-factor", { code: $("code").value });
-  if (res.ok) return (location.href = "/");
+  if (res.ok) return (location.href = afterLoginTarget());
   const code = res.data.error || "server_error";
   if (code === "no_pending_login") {
     setError(t, "password-error", code);
