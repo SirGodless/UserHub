@@ -1,0 +1,9 @@
+{
+  "login.title": "Anmelden",
+  "login.heading": "Anmelden",
+  "login.forgot": "Passwort vergessen?",
+  "login.totp.heading": "Zwei-Faktor-Authentifizierung",
+  "login.totp.intro": "Gib den 6-stelligen Code aus deiner Authenticator-App ein oder einen deiner Wiederherstellungscodes.",
+  "login.resend.intro": "Deine E-Mail-Adresse ist noch nicht bestätigt. Gib sie ein, um eine neue Bestätigungsmail zu bekommen.",
+  "login.resend.done": "Wenn die Adresse zu einem Konto gehört, das noch bestätigt werden muss, haben wir eine neue Mail gesendet."
+}

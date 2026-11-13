@@ -6,9 +6,11 @@
   <meta name="referrer" content="no-referrer">
   <meta name="robots" content="noindex">
   <title>Choose a new password</title>
-  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
 </head>
-<body data-title-key="reset.title">
+<body data-title-key="reset.title" data-i18n-files="common fields errors password setup reset">
 <main>
   <div class="topbar">
     <span class="brand">UserHub</span>
@@ -29,9 +31,11 @@
       <p class="muted" data-i18n="reset.intro"></p>
       <label for="password" data-i18n="field.newPassword">New password</label>
       <input id="password" type="password" autocomplete="new-password" required aria-describedby="password-hint">
-      <p id="password-hint" class="muted" data-i18n="field.password.hint"></p>
+      <p id="password-hint" class="muted" data-i18n="password.hint"></p>
       <label for="password2" data-i18n="field.passwordConfirm">Repeat password</label>
       <input id="password2" type="password" autocomplete="new-password" required>
+      <label class="check"><input type="checkbox" data-show-password="password password2"><span data-i18n="field.showPassword">Show password</span></label>
+      <p class="muted" data-i18n="password.guidance"></p>
       <p id="error" class="error" role="alert"></p>
       <button type="submit" data-i18n="action.setPassword">Set new password</button>
     </form>
@@ -42,6 +46,6 @@
     </section>
   </div>
 </main>
-<script type="module" src="/assets/js/reset.js"></script>
+<script type="module" src="/assets/js/pages/reset.js"></script>
 </body>
 </html>

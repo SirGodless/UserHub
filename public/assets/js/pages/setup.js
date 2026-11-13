@@ -1,6 +1,7 @@
 // Setup-Seite für den ersten Admin. Keine Geschäftslogik: Das Backend prüft alles.
 // Die Seite zeigt nur Formular, QR-Code und die Wiederherstellungscodes.
-import { initI18n, getLang, t } from "/assets/js/i18n.js";
+import { initPasswordToggles } from "/assets/js/shared/password-toggle.js";
+import { initI18n, getLang, t } from "/assets/js/shared/i18n.js";
 import qrcode from "/assets/vendor/qrcode-esm.js";
 
 const token = location.pathname.split("/")[2] || "";
@@ -41,6 +42,7 @@ let secret = "";
 // --- Start: Link prüfen ---
 async function start() {
   await initI18n();
+  initPasswordToggles();
   const res = await call("");
   show(res.ok ? "step-account" : "state-invalid");
 }

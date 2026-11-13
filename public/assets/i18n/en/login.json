@@ -1,0 +1,9 @@
+{
+  "login.title": "Sign in",
+  "login.heading": "Sign in",
+  "login.forgot": "Forgot your password?",
+  "login.totp.heading": "Two-factor authentication",
+  "login.totp.intro": "Enter the 6 digit code from your authenticator app, or one of your recovery codes.",
+  "login.resend.intro": "Your email address is not confirmed yet. Enter it to get a new confirmation email.",
+  "login.resend.done": "If this address belongs to an account that still needs confirmation, we sent a new email."
+}

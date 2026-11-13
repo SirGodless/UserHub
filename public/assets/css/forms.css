@@ -1,0 +1,39 @@
+/* Formulare: Beschriftungen, Eingabefelder, Knöpfe, Fehlertexte, Fokus. */
+label { display: block; font-weight: 600; margin: 16px 0 4px; }
+input[type="text"], input[type="email"], input[type="password"], select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--surface-border);
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+}
+select { width: auto; }
+input.code { font-family: var(--mono); letter-spacing: .2em; font-size: 1.2rem; }
+
+button, .button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--accent-text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+button.secondary { background: transparent; color: var(--accent); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+
+.error { color: var(--danger); margin-top: 12px; min-height: 1.5em; }
+
+.check { display: flex; gap: 8px; align-items: flex-start; font-weight: 400; margin-top: 16px; }
+.check input { margin-top: 5px; }
+
+a.button[aria-disabled="true"] { opacity: .5; cursor: not-allowed; }

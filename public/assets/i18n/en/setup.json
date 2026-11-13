@@ -1,0 +1,16 @@
+{
+  "setup.title": "Set up the first admin",
+  "setup.loading": "Checking the link ...",
+  "setup.invalid.heading": "This link does not work",
+  "setup.invalid.text": "The link is invalid, expired or already used.",
+  "setup.account.heading": "Create the admin account",
+  "setup.account.intro": "This link works once. First the account, then two-factor authentication. Both are required.",
+  "setup.totp.heading": "Set up two-factor authentication",
+  "setup.totp.intro": "Scan the QR code with an authenticator app, then enter the 6 digit code it shows.",
+  "setup.totp.qr.alt": "QR code for the authenticator app",
+  "setup.totp.manual": "Cannot scan? Enter this key in your app:",
+  "setup.done.heading": "Admin account created",
+  "setup.done.intro": "These recovery codes are your way back in if you lose your authenticator app. Each works once.",
+  "setup.done.warning": "They are shown only now. Store them somewhere safe, for example in a password manager.",
+  "setup.done.confirm": "I have saved the recovery codes."
+}

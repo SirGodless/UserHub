@@ -1,5 +1,6 @@
-import { initI18n, t } from "/assets/js/i18n.js";
-import { api, show, useViews, setError, tokenFromPath } from "/assets/js/api.js";
+import { initPasswordToggles } from "/assets/js/shared/password-toggle.js";
+import { initI18n, t } from "/assets/js/shared/i18n.js";
+import { api, show, useViews, setError, tokenFromPath } from "/assets/js/shared/api.js";
 
 const $ = (id) => document.getElementById(id);
 useViews(["state-loading", "state-invalid", "step-form", "step-done"]);
@@ -7,6 +8,7 @@ const token = tokenFromPath();
 
 async function start() {
   await initI18n();
+  initPasswordToggles();
   const res = await api("GET", `/api/auth/password-reset/${encodeURIComponent(token)}`);
   show(res.ok ? "step-form" : "state-invalid");
 }

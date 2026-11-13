@@ -1,0 +1,6 @@
+{
+  "forgot.title": "Passwort vergessen",
+  "forgot.heading": "Passwort vergessen?",
+  "forgot.intro": "Gib die E-Mail-Adresse deines Kontos ein. Ist sie bekannt und bestätigt, schicken wir einen Link zum Wählen eines neuen Passworts.",
+  "forgot.sent": "Wenn es ein Konto mit dieser Adresse gibt und die Adresse bestätigt ist, haben wir einen Link gesendet. Er funktioniert einmal und gilt 1 Stunde."
+}

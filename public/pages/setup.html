@@ -6,9 +6,12 @@
   <meta name="referrer" content="no-referrer">
   <meta name="robots" content="noindex">
   <title>Set up the first admin</title>
-  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/setup.css">
 </head>
-<body data-title-key="setup.title">
+<body data-title-key="setup.title" data-i18n-files="common fields errors password setup">
 <main>
   <div class="topbar">
     <span class="brand">UserHub</span>
@@ -40,10 +43,12 @@
 
       <label for="password" data-i18n="field.password">Password</label>
       <input id="password" type="password" autocomplete="new-password" required aria-describedby="password-hint">
-      <p id="password-hint" class="muted" data-i18n="field.password.hint"></p>
+      <p id="password-hint" class="muted" data-i18n="password.hint"></p>
 
       <label for="password2" data-i18n="field.passwordConfirm">Repeat password</label>
       <input id="password2" type="password" autocomplete="new-password" required>
+      <label class="check"><input type="checkbox" data-show-password="password password2"><span data-i18n="field.showPassword">Show password</span></label>
+      <p class="muted" data-i18n="password.guidance"></p>
 
       <p id="account-error" class="error" role="alert"></p>
       <button type="submit" data-i18n="action.continue">Continue</button>
@@ -82,6 +87,6 @@
     </section>
   </div>
 </main>
-<script type="module" src="/assets/js/setup.js"></script>
+<script type="module" src="/assets/js/pages/setup.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
-// Sehr kleine Übersetzungshilfe. Alle Texte stehen in /assets/i18n/<sprache>.json.
+// Sehr kleine Übersetzungshilfe. Die Texte stehen in /assets/i18n/<sprache>/<thema>.json. Jede Seite nennt im
+// body-Attribut data-i18n-files die Themen, die sie braucht (z. B. "common fields errors login").
 // Vor dem Login merkt sich nur der Browser die Sprache (Standard Englisch).
 const SUPPORTED = ["en", "de"];
 const DEFAULT_LANG = "en";
@@ -24,8 +25,9 @@ export function t(key) {
 
 export async function setLang(lang) {
   if (!SUPPORTED.includes(lang)) lang = DEFAULT_LANG;
-  const res = await fetch(`/assets/i18n/${lang}.json`);
-  strings = await res.json();
+  const files = (document.body.dataset.i18nFiles || "common").split(" ");
+  const loaded = await Promise.all(files.map(async (name) => (await fetch(`/assets/i18n/${lang}/${name}.json`)).json()));
+  strings = Object.assign({}, ...loaded);
   current = lang;
   try {
     localStorage.setItem("lang", lang);

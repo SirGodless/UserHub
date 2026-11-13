@@ -1,11 +1,13 @@
-import { initI18n, t } from "/assets/js/i18n.js";
-import { api, show, useViews, setError } from "/assets/js/api.js";
+import { initPasswordToggles } from "/assets/js/shared/password-toggle.js";
+import { initI18n, t } from "/assets/js/shared/i18n.js";
+import { api, show, useViews, setError } from "/assets/js/shared/api.js";
 
 const $ = (id) => document.getElementById(id);
 useViews(["step-password", "step-code"]);
 
 async function start() {
   await initI18n();
+  initPasswordToggles();
   const me = await api("GET", "/api/auth/me"); // holt auch das CSRF-Cookie
   if (me.ok) location.href = "/";
 }

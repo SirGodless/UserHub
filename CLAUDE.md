@@ -30,3 +30,4 @@ Es gelten alle Arbeitsregeln aus Abschnitt 0 der Hauptdatei. Kurz:
 5. Code einfach und lesbar halten, Joshua soll ihn verstehen.
 6. Branch pro Etappe, Pull Request, kein Push auf `main`, kein Force-Push. Nächste Etappe erst nach Freigabe.
 7. Keine Secrets im Repo.
+8. [E] Struktur und Lesbarkeit (Joshua, 13.11.2026, gilt für alle Etappen): Dateien nach Aufgabe aufteilen, keine Sammeldateien, Namen so, dass man Funktionen über Ordner und Dateinamen findet. `README.md` mit Ordnerübersicht, Startanleitung und Testbefehlen bei jeder Etappe aktuell halten. Struktur und spätere Umbauten in `../AuthenticationService/docs/decisions/code-structure.md` begründen. Gilt auch für Sprachdateien, Docker-Dateien und Doku. Details in der Hauptdatei, Abschnitt 0.

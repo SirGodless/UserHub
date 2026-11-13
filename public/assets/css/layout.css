@@ -1,0 +1,35 @@
+/* Seitenaufbau und Typografie: Rahmen, Karte, Kopfzeile, Überschriften, Hilfsklassen. */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 var(--font);
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+main { width: 100%; max-width: 520px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.brand { font-weight: 700; letter-spacing: .02em; }
+
+h1 { font-size: 1.4rem; margin: 0 0 8px; }
+p { margin: 0 0 16px; }
+.muted { color: var(--text-muted); font-size: .9rem; }
+
+[hidden] { display: none !important; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}

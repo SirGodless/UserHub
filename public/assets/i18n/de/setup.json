@@ -1,0 +1,16 @@
+{
+  "setup.title": "Ersten Admin einrichten",
+  "setup.loading": "Link wird geprüft ...",
+  "setup.invalid.heading": "Dieser Link funktioniert nicht",
+  "setup.invalid.text": "Der Link ist ungültig, abgelaufen oder wurde schon benutzt.",
+  "setup.account.heading": "Admin-Account anlegen",
+  "setup.account.intro": "Dieser Link funktioniert nur einmal. Zuerst der Account, dann die Zwei-Faktor-Authentifizierung. Beides ist Pflicht.",
+  "setup.totp.heading": "Zwei-Faktor-Authentifizierung einrichten",
+  "setup.totp.intro": "Scanne den QR-Code mit einer Authenticator-App und gib dann den 6-stelligen Code ein, den sie anzeigt.",
+  "setup.totp.qr.alt": "QR-Code für die Authenticator-App",
+  "setup.totp.manual": "Scannen geht nicht? Gib diesen Schlüssel in deiner App ein:",
+  "setup.done.heading": "Admin-Account angelegt",
+  "setup.done.intro": "Mit diesen Wiederherstellungscodes kommst du wieder rein, wenn du deine Authenticator-App verlierst. Jeder Code gilt einmal.",
+  "setup.done.warning": "Sie werden nur jetzt angezeigt. Bewahre sie sicher auf, zum Beispiel in einem Passwortmanager.",
+  "setup.done.confirm": "Ich habe die Wiederherstellungscodes gespeichert."
+}

@@ -1,5 +1,5 @@
-import { initI18n, t } from "/assets/js/i18n.js";
-import { api, show, useViews, setError, tokenFromPath } from "/assets/js/api.js";
+import { initI18n, t } from "/assets/js/shared/i18n.js";
+import { api, show, useViews, setError, tokenFromPath } from "/assets/js/shared/api.js";
 
 const $ = (id) => document.getElementById(id);
 useViews(["state-loading", "state-invalid", "step-confirm", "step-done"]);

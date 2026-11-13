@@ -1,0 +1,17 @@
+/* Farben, Radien und Schriften. Dark Mode ist Standard. Ein Light Mode wird später als zweiter Satz
+   dieser Variablen ergänzt, sonst ändert sich nichts. */
+:root {
+  color-scheme: dark;
+  --bg: #14161f;
+  --surface: #1e2130;
+  --surface-border: #343a54;
+  --text: #eceef7;
+  --text-muted: #a9aec6;
+  --accent: #8ab4ff;
+  --accent-text: #0d1220;
+  --danger: #ff9a9a;
+  --focus: #ffd479;
+  --radius: 12px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}

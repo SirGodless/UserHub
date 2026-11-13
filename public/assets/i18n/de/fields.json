@@ -1,0 +1,13 @@
+{
+  "field.username": "Benutzername",
+  "field.username.hint": "3 bis 32 Zeichen: a bis z, 0 bis 9, Punkt, Unterstrich, Bindestrich. Er kann später nicht geändert oder neu vergeben werden.",
+  "field.email": "E-Mail-Adresse",
+  "field.password": "Passwort",
+  "field.passwordConfirm": "Passwort wiederholen",
+  "field.totpCode": "6-stelliger Code",
+  "field.identifier": "Benutzername oder E-Mail",
+  "field.remember": "Eingeloggt bleiben",
+  "field.code": "Code",
+  "field.newPassword": "Neues Passwort",
+  "field.showPassword": "Passwort anzeigen"
+}
