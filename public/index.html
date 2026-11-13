@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
   <title>UserHub</title>
   <link rel="stylesheet" href="/assets/css/base.css">
 </head>
@@ -18,9 +19,17 @@
   </div>
   <div class="card">
     <h1 data-i18n="index.heading">UserHub</h1>
-    <p data-i18n="index.text">The hub is not built yet. This is a placeholder page.</p>
+    <section id="signed-in" hidden>
+      <p><span data-i18n="index.signedInAs">Signed in as</span> <strong id="name"></strong></p>
+      <p class="muted" data-i18n="index.text"></p>
+      <button type="button" id="logout" class="secondary" data-i18n="action.logout">Sign out</button>
+    </section>
+    <section id="signed-out" hidden>
+      <p class="muted" data-i18n="index.text"></p>
+      <a class="button" href="/login" data-i18n="action.signin">Sign in</a>
+    </section>
   </div>
 </main>
-<script type="module" src="/assets/js/common.js"></script>
+<script type="module" src="/assets/js/home.js"></script>
 </body>
 </html>
