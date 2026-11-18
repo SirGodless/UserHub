@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anmelden (Mockup Beere)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+<div class="blob b1" aria-hidden="true"></div><div class="blob b2" aria-hidden="true"></div>
+<main class="login">
+  <header class="topbar"><span class="brand"><span class="logo" aria-hidden="true"></span>UserHub</span>
+    <label class="visually-hidden" for="lang">Sprache</label><select id="lang"><option>Deutsch</option><option>English</option></select></header>
+  <section class="card">
+    <h1>Willkommen zurück</h1>
+    <p class="muted">Melde dich an, um zu deinen Diensten zu kommen.</p>
+    <form onsubmit="return false">
+      <label for="u">Username oder E-Mail</label>
+      <input id="u" type="text" value="joshua" autocomplete="username">
+      <label for="p">Passwort</label>
+      <input id="p" type="password" value="correct horse" autocomplete="current-password">
+      <label class="check"><input type="checkbox" checked><span>Eingeloggt bleiben</span></label>
+      <button type="submit" class="primary">Anmelden</button>
+      <p class="small"><a href="#">Passwort vergessen?</a></p>
+    </form>
+  </section>
+  <p class="foot muted">Zugang nur mit Einladung.</p>
+</main>
+</body>
+</html>
