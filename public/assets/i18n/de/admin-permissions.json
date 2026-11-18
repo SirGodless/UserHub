@@ -28,5 +28,7 @@
   "permissions.form.create": "Recht anlegen",
   "permissions.col.enforcedBy": "Durchgesetzt von",
   "permissions.col.assigned": "Vergeben",
-  "permissions.enforcedNothing": "noch nichts (keine Wirkung)"
+  "permissions.enforcedNothing": "noch nichts (keine Wirkung)",
+  "permissions.col.service": "Dienst",
+  "permissions.service.none": "keiner"
 }

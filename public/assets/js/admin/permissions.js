@@ -12,17 +12,18 @@ export async function renderPermissions(panel) {
   if (!res.ok) return showError(res);
   const again = () => renderPermissions(panel);
 
-  const rows = res.data.map(({ definition: d, enforcedByServices, assignedCount }) => h("tr", {},
+  const rows = res.data.map(({ definition: d, enforcedByServices, assignedCount, ownerService }) => h("tr", {},
     h("td", {}, h("code", { text: d.key })),
     h("td", { text: t("permissions.type." + d.type) + (d.direction ? ` (${t("permissions.direction." + d.direction)})` : "") + (d.allowUnlimited ? `, ${t("permissions.unlimitedAllowed")}` : "") }),
     h("td", { text: d.linkGrantable ? t("users.yes") : t("users.no") }),
+    h("td", { class: "mono", text: ownerService || t("permissions.service.none") }),
     h("td", { text: enforcedByServices.length ? enforcedByServices.join(", ") : t("permissions.enforcedNothing") }),
     h("td", { text: String(assignedCount) }),
     h("td", { text: d.description }),
     h("td", {}, d.builtin ? h("span", { class: "badge", text: t("permissions.builtin") }) : actions(d, again))));
 
   const table = h("table", {},
-    h("thead", {}, h("tr", {}, ["key", "type", "linkGrantable", "enforcedBy", "assigned", "description", "actions"]
+    h("thead", {}, h("tr", {}, ["key", "service", "type", "linkGrantable", "enforcedBy", "assigned", "description", "actions"]
       .map((c) => h("th", { scope: "col", text: t("permissions.col." + c) })))),
     h("tbody", {}, rows));
 

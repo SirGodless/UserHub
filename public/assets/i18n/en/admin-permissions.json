@@ -28,5 +28,7 @@
   "permissions.form.create": "Create right",
   "permissions.col.enforcedBy": "Enforced by",
   "permissions.col.assigned": "Assigned",
-  "permissions.enforcedNothing": "nothing yet (no effect)"
+  "permissions.enforcedNothing": "nothing yet (no effect)",
+  "permissions.col.service": "Service",
+  "permissions.service.none": "none"
 }

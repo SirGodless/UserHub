@@ -42,3 +42,5 @@ a.button[aria-disabled="true"] { opacity: .5; cursor: not-allowed; }
 .error { color: var(--danger); margin-top: 12px; min-height: 1.5em; }
 .success { min-height: 1.5em; margin-top: 12px; }
 .info { border: 1px solid var(--line-strong); border-left: 3px solid var(--accent); border-radius: var(--r); padding: .75rem 1rem; margin-bottom: 1rem; }
+textarea { font: inherit; font-family: var(--mono); font-size: .85rem; color: var(--text); background: var(--bg); border: 1px solid var(--line-strong); border-radius: var(--r); padding: .6rem .75rem; width: 100%; }
+textarea:focus { border-color: var(--accent); }
