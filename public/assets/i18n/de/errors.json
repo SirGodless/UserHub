@@ -50,5 +50,17 @@
   "error.unlimited_not_allowed": "Unbegrenzt ist für dieses Recht nicht erlaubt.",
   "error.number_negative": "Die Zahl darf nicht negativ sein.",
   "error.number_or_unlimited_required": "Gib eine Zahl ein oder wähle unbegrenzt.",
-  "error.value_not_allowed_for_boolean": "Ein Ja/Nein-Recht hat keine Zahl."
+  "error.value_not_allowed_for_boolean": "Ein Ja/Nein-Recht hat keine Zahl.",
+  "error.ip_blocked": "Diese Adresse ist für einen Tag gesperrt, weil mehrere Links versucht wurden, die es nicht gibt. Bitte versuche es später erneut.",
+  "error.link_limit_reached": "Du hast das Limit offener Links erreicht. Warte, bis einer benutzt wird, abläuft oder du ihn deaktivierst.",
+  "error.validity_too_short": "Die Gültigkeit ist kürzer als erlaubt.",
+  "error.validity_too_long": "Die Gültigkeit ist länger als erlaubt.",
+  "error.validity_too_long_privileged": "Links mit Rolle oder Rechten dürfen kürzer gültig sein. Wähle eine kürzere Gültigkeit.",
+  "error.grant_not_held": "Du kannst nur Rechte vergeben, die du selbst hast (und nicht mehr als deinen eigenen Wert).",
+  "error.grant_duplicate": "Ein Recht steht doppelt da.",
+  "error.permission_not_link_grantable": "Dieses Recht oder diese Rolle lässt sich nicht per Link vergeben.",
+  "error.link_unknown": "Diesen Link gibt es nicht.",
+  "error.link_not_active": "Dieser Link ist nicht mehr aktiv.",
+  "error.invite_limits_invalid": "Diese Werte passen nicht zusammen. Die längste Gültigkeit ist 30 Tage, Standard und das kürzere Maximum dürfen nicht länger sein.",
+  "error.block_unknown": "Diese Sperre gibt es nicht mehr."
 }

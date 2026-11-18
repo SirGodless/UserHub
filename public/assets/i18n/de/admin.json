@@ -14,5 +14,8 @@
   "value.unlimited": "Unbegrenzt",
   "value.notSet": "nicht gesetzt",
   "value.granted": "vergeben",
-  "value.permission": "Recht"
+  "value.permission": "Recht",
+  "admin.tab.links": "Links",
+  "admin.tab.settings": "Einstellungen",
+  "admin.nav.links": "Einladungslinks"
 }

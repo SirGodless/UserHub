@@ -62,10 +62,10 @@ for (const page of pages) {
     // Das Seitenskript und alle Module, die es (auch über andere Module) lädt
     for (const file of scriptAndImports("assets/js/pages/" + script)) {
       const code = fs.readFileSync(path.join(root, file), "utf8");
-      keys.push(...[...code.matchAll(/\bt\("([a-zA-Z0-9_.]+)"\)/g)].map((m) => m[1]));
+      keys.push(...[...code.matchAll(/\bt\("([a-zA-Z0-9_.]+)"[,)]/g)].map((m) => m[1]));
       keys.push(...[...code.matchAll(/setError\(t, "[a-z-]+", "([a-z_]+)"\)/g)].map((m) => "error." + m[1]));
       // Schlüssel, die als Text in einem Aufruf stehen (z. B. action(..., "users.confirm.ban", ...)): Thema.Name
-      keys.push(...[...code.matchAll(/"((?:users|roles|permissions|audit|twofactor|admin|value)\.[A-Za-z0-9.]*[A-Za-z0-9])"/g)].map((m) => m[1]));
+      keys.push(...[...code.matchAll(/"((?:users|roles|permissions|audit|twofactor|admin|value|links|adminlinks|settings|invite)\.[A-Za-z0-9.]*[A-Za-z0-9])"/g)].map((m) => m[1]));
       // Schlüssel, die zur Laufzeit aus Präfix und Wert entstehen (t("users.col." + name)): Präfix muss es geben
       // (i18n.js selbst bleibt außen vor: Es übersetzt Fehlercodes nur dort, wo eine Fehlermeldung gesetzt wurde)
       if (file.endsWith("shared/i18n.js")) continue;

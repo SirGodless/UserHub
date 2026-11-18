@@ -1,11 +1,11 @@
 # UserHub
 
 Die Oberfläche zum Backend im Schwesterrepo `AuthenticationService` (muss im Nachbarordner liegen): Setup des ersten
-Admins, Anmelden, Passwort vergessen, E-Mail bestätigen, das Admin-Dashboard (`/admin`), die 2FA-Seite (`/account/2fa`) und eine Startseite. Hub mit Sidebar und die Profilseite folgen.
+Admins, Anmelden, Passwort vergessen, E-Mail bestätigen, das Admin-Dashboard (`/admin`), die 2FA-Seite (`/account/2fa`), die Registrierung über Einladungslinks (`/invite/<token>`), die Seite für eigene Einladungslinks (`/account/links`) und eine Startseite. Hub mit Sidebar und die Profilseite folgen.
 Einfaches HTML, CSS und JavaScript ohne Framework. Die verbindliche Spezifikation steht in
 `../AuthenticationService/CLAUDE.md`.
 
-**Stand:** Etappe 4. Dazu kommen die Seite "Kein Zugang" (`/access-denied`), der Rücksprung nach dem Login zu einem Dienst oder zu `/admin` und `/account/2fa`.
+**Stand:** Etappe 5. Dazu kommen die Seite "Kein Zugang" (`/access-denied`), der Rücksprung nach dem Login zu einem Dienst oder zu `/admin` und `/account/2fa`.
 
 ## Ordnerübersicht
 
@@ -14,8 +14,8 @@ Einfaches HTML, CSS und JavaScript ohne Framework. Die verbindliche Spezifikatio
 | `public/` | Alles, was der Webserver ausliefert. Die Startseite (`index.html`) liegt direkt hier. |
 | `public/pages/` | Eine HTML-Datei pro Seite. Der Dateiname entspricht der Adresse (`login.html` für `/login`). |
 | `public/assets/js/pages/` | Ein Skript pro Seite, gleicher Name wie die Seite. Es enthält nur, was diese Seite tut. |
-| `public/assets/js/shared/` | Was mehrere Seiten brauchen: Aufrufe an das Backend (`api.js`), Übersetzung (`i18n.js`), "Passwort anzeigen" (`password-toggle.js`), Rücksprung nach dem Login (`redirect.js`), Elemente bauen ohne `innerHTML` (`dom.js`), QR-Code (`qr.js`), Wiederherstellungscodes anzeigen und sichern (`recovery-codes.js`). |
-| `public/assets/js/admin/` | Die Teile des Admin-Dashboards, ein Modul je Reiter (`users-list.js`, `users-detail.js`, `roles.js`, `permissions.js`, `audit.js`) plus `ui.js` und `permission-value.js`. |
+| `public/assets/js/shared/` | Was mehrere Seiten brauchen: Aufrufe an das Backend (`api.js`), Übersetzung (`i18n.js`), "Passwort anzeigen" (`password-toggle.js`), Rücksprung nach dem Login (`redirect.js`), Elemente bauen ohne `innerHTML` (`dom.js`), QR-Code (`qr.js`), Wiederherstellungscodes (`recovery-codes.js`), Zeitanzeige in Europe/Berlin (`time.js`), Rechte und Status eines Links als Text (`grants.js`). |
+| `public/assets/js/admin/` | Die Teile des Admin-Dashboards, ein Modul je Reiter (`users-list.js`, `users-detail.js`, `roles.js`, `permissions.js`, `links.js`, `audit.js`, `settings.js`) plus `ui.js` und `permission-value.js`. |
 | `public/assets/css/` | Gestaltung: Farben (`tokens.css`), Seitenaufbau (`layout.css`), Formulare (`forms.css`), Setup- und 2FA-Seite (`setup.css`), Dashboard (`admin.css`). |
 | `public/assets/i18n/` | Texte nach Sprache und Thema (`en/login.json`, `de/login.json`, ...). Jede Seite nennt im `body`, welche Themen sie lädt. |
 | `public/assets/vendor/` | Fremdbibliotheken mit Herkunft und Lizenz (QR-Code). Kein CDN, alles wird selbst ausgeliefert. |
@@ -41,7 +41,7 @@ Der Container lauscht intern auf Port 8080 per HTTP. HTTPS und Zertifikate über
 node tests/check-i18n.js    # en und de gleich vollständig, jede Seite (samt der Module, die sie lädt) findet ihre Texte
 ```
 
-Der Durchlauf im echten Browser (Setup, Login mit 2FA, Passwort vergessen, OIDC, Dashboard, 2FA-Seite) liegt im Backend-Repo:
+Der Durchlauf im echten Browser (Setup, Login mit 2FA, Passwort vergessen, OIDC, Dashboard, 2FA-Seite, Einladungslinks und Registrierung) liegt im Backend-Repo:
 `../AuthenticationService/tests/e2e/run.sh`.
 
 ## Texte ändern oder eine Sprache ergänzen

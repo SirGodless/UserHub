@@ -1,5 +1,8 @@
 {
   "index.heading": "UserHub",
   "index.text": "Der Hub ist noch nicht gebaut. Das hier ist eine Platzhalterseite.",
-  "index.signedInAs": "Angemeldet als"
+  "index.signedInAs": "Angemeldet als",
+  "index.nav.links": "Einladungslinks",
+  "index.nav.twofactor": "Zwei-Faktor-Anmeldung",
+  "index.nav.admin": "Administration"
 }

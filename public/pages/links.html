@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Invitation links</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+<body class="wide" data-title-key="links.title" data-i18n-files="common errors admin links">
+<main>
+  <div class="topbar">
+    <span class="brand">UserHub</span>
+    <nav class="inline" aria-label="Navigation">
+      <a href="/" data-i18n="links.nav.hub">Back to hub</a>
+      <label for="lang" class="visually-hidden" data-i18n="lang.label">Language</label>
+      <select id="lang"><option value="en">English</option><option value="de">Deutsch</option></select>
+    </nav>
+  </div>
+  <div class="card">
+    <h1 data-i18n="links.heading">Invitation links</h1>
+    <p id="notice" role="status"></p>
+    <p id="cannot" class="info" hidden data-i18n="links.cannot"></p>
+    <p id="usage" class="muted"></p>
+
+    <form id="create-form" class="stack" hidden novalidate>
+      <h2 data-i18n="links.new.heading">New link</h2>
+      <label for="validity" data-i18n="links.new.validity">Valid for (hours)</label>
+      <input id="validity" type="number" min="1" step="1" class="narrow">
+      <p id="validity-hint" class="muted"></p>
+      <label for="role" data-i18n="links.new.role">Role (optional)</label>
+      <select id="role"></select>
+      <fieldset id="rights-box" hidden>
+        <legend data-i18n="links.new.permissions">Rights (optional)</legend>
+        <div id="rights"></div>
+      </fieldset>
+      <p id="privileged-hint" class="muted"></p>
+      <div class="actions"><button type="submit" data-i18n="links.new.create">Create link</button></div>
+    </form>
+
+    <section id="created" hidden>
+      <h2 data-i18n="links.created.heading">Link created</h2>
+      <p><strong data-i18n="links.created.warning"></strong></p>
+      <p id="created-url" class="secret"></p>
+      <button type="button" id="copy" class="secondary" data-i18n="links.copy">Copy link</button>
+    </section>
+
+    <section>
+      <h2 data-i18n="links.list.heading">Your links</h2>
+      <div id="list"></div>
+    </section>
+  </div>
+</main>
+<script type="module" src="/assets/js/pages/links.js"></script>
+</body>
+</html>

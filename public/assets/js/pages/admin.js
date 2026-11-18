@@ -7,9 +7,11 @@ import { renderUsers } from "/assets/js/admin/users-list.js";
 import { renderRoles } from "/assets/js/admin/roles.js";
 import { renderPermissions } from "/assets/js/admin/permissions.js";
 import { renderAudit } from "/assets/js/admin/audit.js";
+import { renderLinks } from "/assets/js/admin/links.js";
+import { renderSettings } from "/assets/js/admin/settings.js";
 
 const $ = (id) => document.getElementById(id);
-const renderers = { users: renderUsers, roles: renderRoles, permissions: renderPermissions, audit: renderAudit };
+const renderers = { users: renderUsers, roles: renderRoles, permissions: renderPermissions, links: renderLinks, audit: renderAudit, settings: renderSettings };
 let current = null;
 
 function drawTabs() {

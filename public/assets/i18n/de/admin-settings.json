@@ -1,0 +1,14 @@
+{
+  "settings.title": "Einstellungen",
+  "settings.invites.heading": "Einladungslinks: Gültigkeit",
+  "settings.minHours": "Kürzeste Gültigkeit (Stunden)",
+  "settings.defaultDays": "Standard-Gültigkeit (Tage)",
+  "settings.maxDays": "Längste Gültigkeit (Tage, höchstens 30)",
+  "settings.privilegedMaxDays": "Längste Gültigkeit mit Rolle oder Rechten (Tage, zugleich Standard)",
+  "settings.save": "Speichern",
+  "settings.saved": "Gespeichert.",
+  "settings.blocks.heading": "Gesperrte Adressen (falsche Einladungslinks)",
+  "settings.blocks.none": "Keine Adresse ist gesperrt.",
+  "settings.blocks.until": "gesperrt bis",
+  "settings.blocks.lift": "Sperre aufheben"
+}

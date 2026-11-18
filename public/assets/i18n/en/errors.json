@@ -50,5 +50,17 @@
   "error.unlimited_not_allowed": "Unlimited is not allowed for this right.",
   "error.number_negative": "The number cannot be negative.",
   "error.number_or_unlimited_required": "Enter a number or choose unlimited.",
-  "error.value_not_allowed_for_boolean": "A yes/no right has no number."
+  "error.value_not_allowed_for_boolean": "A yes/no right has no number.",
+  "error.ip_blocked": "This address is blocked for a day because several links that do not exist were tried. Please try again later.",
+  "error.link_limit_reached": "You have reached the limit of open links. Wait until one is used, expires or is deactivated.",
+  "error.validity_too_short": "The validity is shorter than the allowed minimum.",
+  "error.validity_too_long": "The validity is longer than allowed.",
+  "error.validity_too_long_privileged": "Links with a role or rights may be valid for less time. Choose a shorter validity.",
+  "error.grant_not_held": "You can only give rights you have yourself (and not more than your own value).",
+  "error.grant_duplicate": "A right appears twice.",
+  "error.permission_not_link_grantable": "This right or role cannot be given by link.",
+  "error.link_unknown": "This link does not exist.",
+  "error.link_not_active": "This link is not active any more.",
+  "error.invite_limits_invalid": "These values do not fit together. The longest validity is 30 days, the default and the shorter maximum cannot be longer than the longest.",
+  "error.block_unknown": "This block does not exist any more."
 }

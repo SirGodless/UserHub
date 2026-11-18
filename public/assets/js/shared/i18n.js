@@ -25,8 +25,11 @@ export function getLang() {
   return current;
 }
 
-export function t(key) {
-  return strings[key] ?? key;
+// t(Schlüssel) oder t(Schlüssel, { name: wert }): {name} im Text wird ersetzt
+export function t(key, vars) {
+  let text = strings[key] ?? key;
+  for (const [name, value] of Object.entries(vars || {})) text = text.replaceAll(`{${name}}`, String(value));
+  return text;
 }
 
 export async function setLang(lang) {

@@ -1,0 +1,14 @@
+{
+  "settings.title": "Settings",
+  "settings.invites.heading": "Invitation links: validity",
+  "settings.minHours": "Shortest validity (hours)",
+  "settings.defaultDays": "Default validity (days)",
+  "settings.maxDays": "Longest validity (days, at most 30)",
+  "settings.privilegedMaxDays": "Longest validity with role or rights (days, also the default)",
+  "settings.save": "Save",
+  "settings.saved": "Saved.",
+  "settings.blocks.heading": "Blocked addresses (wrong invitation links)",
+  "settings.blocks.none": "No address is blocked.",
+  "settings.blocks.until": "blocked until",
+  "settings.blocks.lift": "Lift block"
+}
