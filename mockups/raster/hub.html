@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de" data-theme="dark">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Hub (Mockup Raster)</title>
+<link rel="stylesheet" href="style.css"><script src="theme.js"></script></head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">UserHub</div>
+    <p class="side-title">Dienste</p>
+    <nav aria-label="Deine Dienste">
+      <a class="current" href="#"><span>Vaultwarden</span><span class="dot" title="online"></span></a>
+      <a href="#"><span>Audiobookshelf</span><span class="dot" title="online"></span></a>
+      <a href="#"><span>Pelican</span><span class="dot down" title="offline"></span></a>
+    </nav>
+    <p class="side-title">Konto</p>
+    <nav aria-label="Konto">
+      <a href="#"><span>Übersicht</span></a><a href="#"><span>Profil</span></a><a href="#"><span>Einladungen</span></a><a href="#"><span>Verwaltung</span></a>
+    </nav>
+    <div class="grow"></div>
+    <div class="me"><span>joshua</span><button>Abmelden</button></div>
+  </aside>
+  <main class="content">
+    <header class="bar"><h1>Übersicht</h1>
+      <div class="right"><label class="visually-hidden" for="lang">Sprache</label><select id="lang"><option>Deutsch</option><option>English</option></select>
+        <div class="seg" role="group" aria-label="Darstellung"><button data-set-theme="light">Hell</button><button data-set-theme="dark">Dunkel</button></div></div></header>
+
+    <dl class="stats">
+      <div class="stat"><dt>Dienste</dt><dd>3</dd></div>
+      <div class="stat"><dt>Online</dt><dd>2</dd></div>
+      <div class="stat"><dt>Offline</dt><dd class="warn">1</dd></div>
+      <div class="stat"><dt>Links frei</dt><dd>3 / 5</dd></div>
+    </dl>
+
+    <h2>Deine Dienste</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Name</th><th>Status</th><th>Geprüft</th><th class="act">Aktion</th></tr></thead>
+      <tbody>
+        <tr><td class="name">Vaultwarden<small>Passwörter und Zugangsdaten</small></td><td><span class="tag ok">Online</span></td><td class="mono">vor 12 s</td><td class="act"><a class="btn primary" href="#">Öffnen</a></td></tr>
+        <tr><td class="name">Audiobookshelf<small>Hörbücher und Podcasts</small></td><td><span class="tag ok">Online</span></td><td class="mono">vor 12 s</td><td class="act"><a class="btn primary" href="#">Öffnen</a></td></tr>
+        <tr class="off"><td class="name">Pelican<small>Gameserver verwalten</small></td><td><span class="tag down">Offline</span></td><td class="mono">vor 12 s</td><td class="act"><a class="btn disabled" href="#" aria-disabled="true">Öffnen</a></td></tr>
+      </tbody></table></div>
+
+    <h2>Konto</h2>
+    <div class="rows">
+      <a class="row" href="#"><b>Zwei-Faktor-Anmeldung</b><span class="val ok">AKTIV</span></a>
+      <a class="row" href="#"><b>Einladungslinks</b><span class="val">3 VON 5 FREI</span></a>
+      <a class="row" href="#"><b>Passwort ändern</b><span class="val">ZULETZT 02.11.2026</span></a>
+      <a class="row" href="#"><b>Verwaltung</b><span class="val">BENUTZER, ROLLEN, RECHTE, PROTOKOLL</span></a>
+    </div>
+  </main>
+</div>
+</body></html>
