@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Create your account</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <script src="/assets/js/shared/theme.js"></script>
+</head>
+<body data-title-key="invite.title" data-i18n-files="common fields errors password setup invite">
+<main>
+  <div class="topbar">
+    <span class="brand">UserHub</span>
+    <div>
+      <label for="lang" class="visually-hidden" data-i18n="lang.label">Language</label>
+      <select id="lang"><option value="en">English</option><option value="de">Deutsch</option></select>
+    </div>
+  </div>
+  <div class="card">
+    <p id="state-loading" data-i18n="setup.loading">Checking the link ...</p>
+
+    <section id="state-invalid" hidden>
+      <h1 data-i18n="setup.invalid.heading">This link does not work</h1>
+      <p data-i18n="setup.invalid.text"></p>
+      <p><a href="/login" data-i18n="link.backToSignin">Back to sign in</a></p>
+    </section>
+
+    <section id="state-blocked" hidden>
+      <h1 data-i18n="invite.blocked.heading">Too many wrong links</h1>
+      <p data-i18n="error.ip_blocked"></p>
+    </section>
+
+    <form id="step-form" hidden novalidate>
+      <h1 data-i18n="invite.heading">Create your account</h1>
+      <p class="muted" data-i18n="invite.intro"></p>
+
+      <label for="username" data-i18n="field.username">Username</label>
+      <input id="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required aria-describedby="username-hint">
+      <p id="username-hint" class="muted" data-i18n="field.username.hint"></p>
+
+      <label for="email" data-i18n="field.email">Email address</label>
+      <input id="email" type="email" autocomplete="email" required>
+
+      <label for="password" data-i18n="field.password">Password</label>
+      <input id="password" type="password" autocomplete="new-password" required aria-describedby="password-hint">
+      <p id="password-hint" class="muted" data-i18n="password.hint"></p>
+
+      <label for="password2" data-i18n="field.passwordConfirm">Repeat password</label>
+      <input id="password2" type="password" autocomplete="new-password" required>
+      <label class="check"><input type="checkbox" data-show-password="password password2"><span data-i18n="field.showPassword">Show password</span></label>
+      <p class="muted" data-i18n="password.guidance"></p>
+
+      <p id="error" class="error" role="alert"></p>
+      <button type="submit" data-i18n="invite.button">Create account</button>
+    </form>
+
+    <section id="step-done" hidden>
+      <h1 data-i18n="invite.done.heading">Check your email</h1>
+      <p data-i18n="invite.done.text"></p>
+      <a class="button" href="/login" data-i18n="action.signin">Sign in</a>
+    </section>
+  </div>
+</main>
+<script type="module" src="/assets/js/pages/invite.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+/* QR-Code, Geheimnis und Wiederherstellungscodes (Setup-Seite und 2FA-Seite). */
+.qr { background: #fff; display: inline-block; border-radius: var(--r); padding: 4px; line-height: 0; }
+.qr svg { width: 200px; height: 200px; }
+.secret { font-family: var(--mono); word-break: break-all; user-select: all; }
+ol.codes { font-family: var(--mono); columns: 2; padding-left: 1.6em; margin: 12px 0; }
+ol.codes li { margin-bottom: 4px; }

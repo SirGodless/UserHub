@@ -1,8 +1,12 @@
 # Entscheidungen (UserHub)
 
 Die Entscheidungen und Annahmen für beide Repos stehen gesammelt in
-`../../AuthenticationService/docs/DECISIONS.md` (Abschnitt "UI (UserHub)"). Dort stehen auch die offenen Fragen in `OPEN-QUESTIONS.md`.
+`../../AuthenticationService/docs/DECISIONS.md` (Inhaltsverzeichnis) und `../../AuthenticationService/docs/decisions/`.
+Für dieses Repo sind vor allem relevant:
 
-Kurz für Etappe 1: Webserver nginx-unprivileged auf Port 8080, QR-Code-Bibliothek selbst gehostet (`public/assets/vendor`), strenge CSP, Texte in `public/assets/i18n/en.json` und `de.json`.
+- `ui.md`: Webserver (nginx ohne Root), selbst gehostete QR-Bibliothek, strenge Sicherheits-Header, Sprachumschalter, Passwortfelder nach NIST.
+- `code-structure.md`: Aufbau von `public/` (Seiten, Skripte, CSS, Sprachdateien nach Thema) und warum.
 
-Etappe 2: Seiten `/login`, `/forgot`, `/reset/<token>`, `/confirm/<token>` und eine Startseite mit Anmelde-Status. Die UI spricht nur mit `/api/auth/*` (gleiche Adresse, Cookies und CSRF-Header siehe `public/assets/js/api.js`). Links in Mails verbrauchen sich erst auf Knopfdruck. Alle Texte in `en.json` und `de.json`.
+Kurz zum Stand: Seite `/account` (Profil) und der Hub auf `/` mit Seitenmenü (ab Etappe 6, siehe `hub-and-services.md`), Seiten `/invite/<token>` und `/account/links` (ab Etappe 5, siehe `invite-links.md`), `/admin` und `/account/2fa` (ab Etappe 4, siehe `admin-dashboard.md` und `two-factor-settings.md`), `/access-denied` (ab Etappe 3), `/login`, `/forgot`, `/reset/<token>`, `/confirm/<token>`, `/setup/<token>` und eine Startseite mit
+Anmelde-Status. Die UI spricht nur mit `/api/auth/*`, `/api/setup/*` und `/api/admin/*` (gleiche Adresse, Cookies und CSRF-Header über
+`public/assets/js/shared/api.js`). Links in Mails verbrauchen sich erst auf Knopfdruck.

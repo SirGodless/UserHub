@@ -1,0 +1,13 @@
+{
+  "audit.title": "Protokoll",
+  "audit.action": "Aktion beginnt mit",
+  "audit.user": "Username",
+  "audit.filter": "Filtern",
+  "audit.more": "Mehr laden",
+  "audit.col.time": "Zeit",
+  "audit.col.actor": "Von",
+  "audit.col.subject": "Betrifft",
+  "audit.col.action": "Aktion",
+  "audit.col.details": "Details",
+  "audit.col.ip": "IP"
+}

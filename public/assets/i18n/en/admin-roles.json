@@ -1,0 +1,16 @@
+{
+  "roles.title": "Roles",
+  "roles.hint": "Roles are live groups: a change applies to all members immediately.",
+  "roles.name": "Name of the new role",
+  "roles.create": "Create role",
+  "roles.builtin": "built in",
+  "roles.members": "Members",
+  "roles.allAdmin": "Contains all admin rights automatically.",
+  "roles.removePermission": "Remove",
+  "roles.setPermission": "Set right",
+  "roles.rename": "Rename",
+  "roles.renamePrompt": "New name",
+  "roles.delete": "Delete role",
+  "roles.confirmDelete": "Delete this role? Members lose its rights.",
+  "roles.deleted": "Role deleted."
+}

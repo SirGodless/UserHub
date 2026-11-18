@@ -1,0 +1,8 @@
+{
+  "reset.title": "Choose a new password",
+  "reset.heading": "Choose a new password",
+  "reset.intro": "After this you are signed out everywhere. Two-factor authentication stays as it is.",
+  "reset.requestNew": "Request a new link",
+  "reset.doneHeading": "Password changed",
+  "reset.done": "Your password was changed and all sessions were signed out. Sign in with the new password."
+}

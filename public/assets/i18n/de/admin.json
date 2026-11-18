@@ -1,0 +1,22 @@
+{
+  "admin.title": "Administration",
+  "admin.heading": "Administration",
+  "admin.nav.hub": "Zurück zum Hub",
+  "admin.nav.twofactor": "Zwei-Faktor-Einstellungen",
+  "admin.twofactorNeeded": "Admin-Funktionen brauchen die Zwei-Faktor-Anmeldung.",
+  "admin.twofactorLink": "Zwei-Faktor-Anmeldung einrichten",
+  "admin.none": "Dein Konto hat keine Admin-Funktionen.",
+  "admin.tab.users": "Benutzer",
+  "admin.tab.roles": "Rollen",
+  "admin.tab.permissions": "Rechte",
+  "admin.tab.audit": "Protokoll",
+  "value.number": "Zahl",
+  "value.unlimited": "Unbegrenzt",
+  "value.notSet": "nicht gesetzt",
+  "value.granted": "vergeben",
+  "value.permission": "Recht",
+  "admin.tab.links": "Links",
+  "admin.tab.settings": "Einstellungen",
+  "admin.nav.links": "Einladungslinks",
+  "admin.tab.services": "Dienste"
+}

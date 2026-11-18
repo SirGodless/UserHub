@@ -1,0 +1,13 @@
+{
+  "shell.services": "Dienste",
+  "shell.account": "Konto",
+  "shell.noServices": "Noch keine Dienste.",
+  "shell.nav.overview": "Übersicht",
+  "shell.nav.profile": "Profil",
+  "shell.nav.links": "Einladungen",
+  "shell.nav.twofactor": "Zwei-Faktor",
+  "shell.nav.admin": "Verwaltung",
+  "shell.status.up": "online",
+  "shell.status.down": "offline",
+  "shell.status.unknown": "unbekannt"
+}

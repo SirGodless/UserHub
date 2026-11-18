@@ -1,0 +1,19 @@
+{
+  "app.title": "UserHub",
+  "lang.label": "Language",
+  "action.continue": "Continue",
+  "action.back": "Back",
+  "action.finish": "Create admin account",
+  "action.copy": "Copy codes",
+  "action.copied": "Copied",
+  "action.download": "Download as text file",
+  "action.next": "Continue",
+  "action.signin": "Sign in",
+  "action.verify": "Verify",
+  "action.resend": "Send confirmation email",
+  "action.sendLink": "Send reset link",
+  "link.backToSignin": "Back to sign in",
+  "action.setPassword": "Set new password",
+  "action.confirm": "Confirm email address",
+  "action.logout": "Sign out"
+}

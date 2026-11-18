@@ -1,0 +1,23 @@
+{
+  "profile.title": "Profile",
+  "profile.heading": "Profile",
+  "profile.account": "Account",
+  "profile.username": "Username",
+  "profile.language.heading": "Language",
+  "profile.language.intro": "Used for the interface and for emails sent to you.",
+  "profile.language.saved": "Language saved.",
+  "profile.password.heading": "Change password",
+  "profile.password.current": "Current password",
+  "profile.password.new": "New password",
+  "profile.password.button": "Change password",
+  "profile.password.saved": "Password changed. Your other sessions were ended.",
+  "profile.more.heading": "More",
+  "profile.more.twofactor": "Two-factor authentication and recovery codes",
+  "profile.more.links": "Invitation links",
+  "profile.theme.heading": "Appearance",
+  "profile.theme.intro": "Light or dark. By default the page follows the setting of your device.",
+  "profile.theme.system": "Follow my device",
+  "profile.theme.light": "Light",
+  "profile.theme.dark": "Dark",
+  "profile.theme.saved": "Appearance saved."
+}

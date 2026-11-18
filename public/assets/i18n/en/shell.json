@@ -1,0 +1,13 @@
+{
+  "shell.services": "Services",
+  "shell.account": "Account",
+  "shell.noServices": "No services yet.",
+  "shell.nav.overview": "Overview",
+  "shell.nav.profile": "Profile",
+  "shell.nav.links": "Invitations",
+  "shell.nav.twofactor": "Two-factor",
+  "shell.nav.admin": "Administration",
+  "shell.status.up": "online",
+  "shell.status.down": "offline",
+  "shell.status.unknown": "unknown"
+}

@@ -1,0 +1,13 @@
+{
+  "field.username": "Username",
+  "field.username.hint": "3 to 32 characters: a to z, 0 to 9, dot, underscore, hyphen. It can never be changed or reused.",
+  "field.email": "Email address",
+  "field.password": "Password",
+  "field.passwordConfirm": "Repeat password",
+  "field.totpCode": "6 digit code",
+  "field.identifier": "Username or email",
+  "field.remember": "Stay signed in",
+  "field.code": "Code",
+  "field.newPassword": "New password",
+  "field.showPassword": "Show password"
+}

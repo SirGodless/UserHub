@@ -1,0 +1,5 @@
+{
+  "adminlinks.title": "All invitation links",
+  "adminlinks.hint": "Links are never deleted, only deactivated. The token itself is not stored and cannot be shown.",
+  "adminlinks.col.creator": "Creator"
+}

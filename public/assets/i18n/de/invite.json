@@ -1,0 +1,9 @@
+{
+  "invite.title": "Konto erstellen",
+  "invite.heading": "Konto erstellen",
+  "invite.intro": "Du wurdest eingeladen. Wähle einen Usernamen und ein Passwort. Wir senden einen Bestätigungslink an deine E-Mail-Adresse.",
+  "invite.button": "Konto erstellen",
+  "invite.done.heading": "Prüfe dein Postfach",
+  "invite.done.text": "Wir haben einen Bestätigungslink an deine E-Mail-Adresse gesendet. Öffne ihn, um dein Konto zu aktivieren, und melde dich dann an.",
+  "invite.blocked.heading": "Zu viele falsche Links"
+}
