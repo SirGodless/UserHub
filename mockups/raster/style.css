@@ -1,8 +1,8 @@
 /* Raster (weicher): klare Linien und Raster, kleine Rundungen, kleine Mono-Beschriftungen, Überschriften normal geschrieben. Dunkel und Hell über data-theme. */
 :root{--font:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,"Liberation Mono",monospace}
-:root,[data-theme=dark]{color-scheme:dark;--bg:#13151b;--side:#101218;--surface:#191c24;--text:#eceef4;--muted:#9fa6b8;--line:#272b36;--line-strong:#3c4252;--hover:#1c1f28;--current:#222633;--r:5px;--r-card:8px;
+:root,[data-theme=dark]{color-scheme:dark;--bg:#141414;--side:#101010;--surface:#1a1a1a;--text:#ececec;--muted:#a3a3a3;--line:#2a2a2a;--line-strong:#454545;--hover:#1f1f1f;--current:#262626;--r:5px;--r-card:8px;
 --accent:#8c99ff;--accent-text:#0d0d0d;--link:#a9b3ff;--ok:#5ee08f;--down:#f2b04a;--focus:#ffd479}
-[data-theme=light]{color-scheme:light;--bg:#f4f5f8;--side:#eceef3;--surface:#fff;--text:#14161c;--muted:#566074;--line:#dadde6;--line-strong:#b4bacb;--hover:#e8eaf1;--current:#dfe2ee;--r:5px;--r-card:8px;
+[data-theme=light]{color-scheme:light;--bg:#f4f4f4;--side:#ececec;--surface:#fff;--text:#161616;--muted:#595959;--line:#dcdcdc;--line-strong:#b5b5b5;--hover:#e8e8e8;--current:#e0e0e0;--r:5px;--r-card:8px;
 --accent:#3a49d6;--accent-text:#fff;--link:#2f3dc0;--ok:#1a7a3a;--down:#9a5b00;--focus:#8a4b00}
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font:15px/1.5 var(--font)}
