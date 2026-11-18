@@ -5,7 +5,7 @@ Admins, Anmelden, Passwort vergessen, E-Mail bestätigen, das Admin-Dashboard (`
 Einfaches HTML, CSS und JavaScript ohne Framework. Die verbindliche Spezifikation steht in
 `../AuthenticationService/CLAUDE.md`.
 
-**Stand:** Etappe 6. Neu: Hub mit Seitenmenü, Profilseite (`/account`), Akzentfarbe pro Dienst, Hell/Dunkel, neue Gestaltung "Raster" auf allen Seiten. Dazu kommen die Seite "Kein Zugang" (`/access-denied`), der Rücksprung nach dem Login zu einem Dienst oder zu `/admin` und `/account/2fa`.
+**Stand:** Etappe 7. Die Darstellung (hell, dunkel, wie das Gerät) stellt jeder auf der Profilseite ein (kein Umschalter auf den Seiten).  Neu: Hub mit Seitenmenü, Profilseite (`/account`), Akzentfarbe pro Dienst, Hell/Dunkel, neue Gestaltung "Raster" auf allen Seiten. Dazu kommen die Seite "Kein Zugang" (`/access-denied`), der Rücksprung nach dem Login zu einem Dienst oder zu `/admin` und `/account/2fa`.
 
 ## Ordnerübersicht
 
@@ -14,7 +14,7 @@ Einfaches HTML, CSS und JavaScript ohne Framework. Die verbindliche Spezifikatio
 | `public/` | Alles, was der Webserver ausliefert. Die Startseite (`index.html`) liegt direkt hier. |
 | `public/pages/` | Eine HTML-Datei pro Seite. Der Dateiname entspricht der Adresse (`login.html` für `/login`). |
 | `public/assets/js/pages/` | Ein Skript pro Seite, gleicher Name wie die Seite. Es enthält nur, was diese Seite tut. |
-| `public/assets/js/shared/` | Was mehrere Seiten brauchen: Aufrufe an das Backend (`api.js`), Übersetzung (`i18n.js`), "Passwort anzeigen" (`password-toggle.js`), Rücksprung nach dem Login (`redirect.js`), Elemente bauen ohne `innerHTML` (`dom.js`), QR-Code (`qr.js`), Wiederherstellungscodes (`recovery-codes.js`), Zeitanzeige in Europe/Berlin (`time.js`), Rechte und Status eines Links als Text (`grants.js`), Seitenmenü (`shell.js`), Hell/Dunkel (`theme.js`), Farbe eines Dienstes (`service-color.js`). |
+| `public/assets/js/shared/` | Was mehrere Seiten brauchen: Aufrufe an das Backend (`api.js`), Übersetzung (`i18n.js`), "Passwort anzeigen" (`password-toggle.js`), Rücksprung nach dem Login (`redirect.js`), Elemente bauen ohne `innerHTML` (`dom.js`), QR-Code (`qr.js`), Wiederherstellungscodes (`recovery-codes.js`), Zeitanzeige in Europe/Berlin (`time.js`), Rechte und Status eines Links als Text (`grants.js`), Seitenmenü (`shell.js`), Darstellung aus dem Konto (`theme.js`, `theme-setting.js`), Farbe eines Dienstes (`service-color.js`). |
 | `mockups/` | Der gewählte Stilentwurf "Raster" als statische Seiten (nur zum Ansehen, wird nicht ausgeliefert). |
 | `public/assets/js/admin/` | Die Teile des Admin-Dashboards, ein Modul je Reiter (`users-list.js`, `users-detail.js`, `roles.js`, `permissions.js`, `services.js`, `links.js`, `audit.js`, `settings.js`) plus `ui.js` und `permission-value.js`. |
 | `public/assets/css/` | Gestaltung: Farben (`tokens.css`), Seitenaufbau (`layout.css`), Formulare (`forms.css`), Setup- und 2FA-Seite (`setup.css`), Dashboard (`admin.css`). `tokens.css` enthält Dunkel und Hell. |

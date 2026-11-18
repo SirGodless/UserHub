@@ -12,5 +12,9 @@
   "services.color.reset": "Use default",
   "services.preview": "Preview",
   "services.save": "Save",
-  "services.saved": "Saved."
+  "services.saved": "Saved.",
+  "services.lock": "Keep this color even if the service reports one",
+  "services.lock.hint": "A color reported by the service replaces the color set here, unless this box is ticked.",
+  "services.reported": "Reported by the service",
+  "services.reported.none": "none yet"
 }

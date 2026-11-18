@@ -3,6 +3,7 @@ import { initI18n, getLang, setLang, t } from "/assets/js/shared/i18n.js";
 import { api, setError } from "/assets/js/shared/api.js";
 import { initPasswordToggles } from "/assets/js/shared/password-toggle.js";
 import { initShell, redrawShell } from "/assets/js/shared/shell.js";
+import { setTheme } from "/assets/js/shared/theme-setting.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -12,6 +13,7 @@ async function start() {
   const hub = await initShell();
   if (!hub) return;
   $("profile-language").value = getLang();
+  $("profile-theme").value = hub.account.theme;
 }
 
 $("profile-language").addEventListener("change", async () => {
@@ -22,6 +24,15 @@ $("profile-language").addEventListener("change", async () => {
   await setLang(language);
   redrawShell();
   $("language-saved").hidden = false;
+});
+
+$("profile-theme").addEventListener("change", async () => {
+  const theme = $("profile-theme").value;
+  $("theme-saved").hidden = true;
+  const res = await api("PUT", "/api/auth/theme", { theme });
+  if (!res.ok) return;
+  setTheme(theme);
+  $("theme-saved").hidden = false;
 });
 
 $("password-form").addEventListener("submit", async (e) => {

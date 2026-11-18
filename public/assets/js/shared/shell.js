@@ -4,6 +4,7 @@ import { api } from "/assets/js/shared/api.js";
 import { h } from "/assets/js/shared/dom.js";
 import { t, getLang, setLang } from "/assets/js/shared/i18n.js";
 import { applyServiceColor } from "/assets/js/shared/service-color.js";
+import { setTheme } from "/assets/js/shared/theme-setting.js";
 
 // Gibt die Hub-Daten zurück (oder null, wenn nicht angemeldet) und zeichnet das Seitenmenü.
 export async function initShell() {
@@ -13,7 +14,8 @@ export async function initShell() {
     return null;
   }
   if (!res.ok) return null;
-  // Die Oberfläche folgt der Sprache des Kontos
+  // Die Oberfläche folgt Darstellung und Sprache des Kontos
+  setTheme(res.data.account.theme);
   if (res.data.account.language !== getLang()) await setLang(res.data.account.language);
   drawSidebar(res.data);
   return res.data;

@@ -15,8 +15,5 @@
   "link.backToSignin": "Back to sign in",
   "action.setPassword": "Set new password",
   "action.confirm": "Confirm email address",
-  "action.logout": "Sign out",
-  "theme.label": "Appearance",
-  "theme.light": "Light",
-  "theme.dark": "Dark"
+  "action.logout": "Sign out"
 }

@@ -13,5 +13,11 @@
   "profile.password.saved": "Passwort geändert. Deine anderen Sitzungen wurden beendet.",
   "profile.more.heading": "Weiteres",
   "profile.more.twofactor": "Zwei-Faktor-Anmeldung und Wiederherstellungscodes",
-  "profile.more.links": "Einladungslinks"
+  "profile.more.links": "Einladungslinks",
+  "profile.theme.heading": "Darstellung",
+  "profile.theme.intro": "Hell oder dunkel. Standardmäßig folgt die Seite der Einstellung deines Geräts.",
+  "profile.theme.system": "Wie mein Gerät",
+  "profile.theme.light": "Hell",
+  "profile.theme.dark": "Dunkel",
+  "profile.theme.saved": "Darstellung gespeichert."
 }

@@ -12,5 +12,9 @@
   "services.color.reset": "Standard nutzen",
   "services.preview": "Vorschau",
   "services.save": "Speichern",
-  "services.saved": "Gespeichert."
+  "services.saved": "Gespeichert.",
+  "services.lock": "Diese Farbe behalten, auch wenn der Dienst eine meldet",
+  "services.lock.hint": "Eine vom Dienst gemeldete Farbe ersetzt die hier eingestellte, außer dieses Kästchen ist angekreuzt.",
+  "services.reported": "Vom Dienst gemeldet",
+  "services.reported.none": "bisher keine"
 }

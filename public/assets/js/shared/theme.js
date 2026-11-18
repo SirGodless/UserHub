@@ -1,22 +1,27 @@
-// Hell oder Dunkel: Die Wahl wird im Browser gemerkt, ohne Wahl gilt die Einstellung des Systems.
-// Klassisches Skript im head, damit die Seite nicht kurz in der falschen Farbe aufblitzt.
+// Darstellung: "system" (Einstellung des Geräts), "light" oder "dark". Die Wahl steht beim Konto (Profilseite) und wird
+// zusätzlich im Browser gemerkt, damit auch die Seiten vor dem Login und der erste Aufbau ohne Aufblitzen passen.
+// Klassisches Skript im head (läuft vor dem Zeichnen). Die Module benutzen window.UserHubTheme.
 (function () {
   var root = document.documentElement;
-  var saved = null;
-  try { saved = localStorage.getItem("theme"); } catch (e) { /* gesperrt: dann gilt die Systemwahl */ }
-  root.dataset.theme = saved === "light" || saved === "dark" ? saved : (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+  var query = matchMedia("(prefers-color-scheme: light)");
 
-  function sync() {
-    document.querySelectorAll("[data-set-theme]").forEach(function (b) {
-      b.setAttribute("aria-pressed", String(b.dataset.setTheme === root.dataset.theme));
-    });
+  function resolve(mode) {
+    return mode === "light" || mode === "dark" ? mode : (query.matches ? "light" : "dark");
   }
-  document.addEventListener("click", function (e) {
-    var b = e.target.closest("[data-set-theme]");
-    if (!b) return;
-    root.dataset.theme = b.dataset.setTheme;
-    try { localStorage.setItem("theme", b.dataset.setTheme); } catch (err) { /* egal */ }
-    sync();
-  });
-  document.addEventListener("DOMContentLoaded", sync);
+  function stored() {
+    try { return localStorage.getItem("theme"); } catch (e) { return null; }   // gesperrt: dann gilt das System
+  }
+  function apply(mode) {
+    root.dataset.theme = resolve(mode);
+  }
+  apply(stored());
+  // Folgt das Konto dem System, zieht ein Wechsel am Gerät sofort mit
+  query.addEventListener("change", function () { if (!stored() || stored() === "system") apply("system"); });
+
+  window.UserHubTheme = {
+    set: function (mode) {
+      try { localStorage.setItem("theme", mode); } catch (e) { /* egal */ }
+      apply(mode);
+    },
+  };
 })();
