@@ -1,0 +1,22 @@
+{
+  "twofactor.title": "Zwei-Faktor-Anmeldung",
+  "twofactor.heading": "Zwei-Faktor-Anmeldung",
+  "twofactor.nav.hub": "Zurück zum Hub",
+  "twofactor.status.on": "Die Zwei-Faktor-Anmeldung ist eingeschaltet.",
+  "twofactor.status.off": "Die Zwei-Faktor-Anmeldung ist ausgeschaltet.",
+  "twofactor.status.codesLeft": "Unbenutzte Wiederherstellungscodes",
+  "twofactor.mandatory": "Dein Konto hat Verwaltungsrechte, deshalb ist die Zwei-Faktor-Anmeldung Pflicht und lässt sich nicht abschalten.",
+  "twofactor.start.intro": "Bestätige zum Start dein Passwort. Du brauchst eine Authenticator-App auf deinem Handy.",
+  "twofactor.start.button": "Einrichten",
+  "twofactor.confirm.button": "Zwei-Faktor-Anmeldung einschalten",
+  "twofactor.codes.heading": "Wiederherstellungscodes",
+  "twofactor.codes.warning": "Speichere diese Codes jetzt. Sie werden nur einmal angezeigt und jeder gilt nur einmal.",
+  "twofactor.codeOrRecovery": "Code aus deiner App oder ein Wiederherstellungscode",
+  "twofactor.regen.heading": "Neue Wiederherstellungscodes",
+  "twofactor.regen.intro": "Die alten Codes gelten danach nicht mehr.",
+  "twofactor.regen.button": "Neue Wiederherstellungscodes erzeugen",
+  "twofactor.disable.heading": "Zwei-Faktor-Anmeldung abschalten",
+  "twofactor.disable.intro": "Danach genügt dein Passwort zum Anmelden. Deine anderen Sitzungen enden.",
+  "twofactor.disable.button": "Abschalten",
+  "twofactor.disable.confirm": "Die Zwei-Faktor-Anmeldung wirklich abschalten?"
+}

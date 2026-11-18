@@ -38,6 +38,15 @@ for (const n of names) for (const k of Object.keys(topics.en[n])) {
   seen[k] = n;
 }
 
+// Das Skript einer Seite und alle Module, die es per import lädt (rekursiv)
+function scriptAndImports(file, seen = new Set()) {
+  if (seen.has(file)) return seen;
+  seen.add(file);
+  const code = fs.readFileSync(path.join(root, file), "utf8");
+  for (const m of code.matchAll(/from "\/(assets\/js\/[^"]+)"/g)) scriptAndImports(m[1], seen);
+  return seen;
+}
+
 // 2. und 4. Seiten
 const pages = ["index.html", ...fs.readdirSync(path.join(root, "pages")).map((f) => "pages/" + f)];
 for (const page of pages) {
@@ -48,21 +57,33 @@ for (const page of pages) {
   const keys = [...html.matchAll(/data-i18n(?:-placeholder|-aria-label)?="([^"]+)"/g)].map((m) => m[1]);
   const titleKey = (html.match(/data-title-key="([^"]+)"/) || [])[1];
   if (titleKey) keys.push(titleKey);
-  const script = (html.match(/src="\/assets\/js\/pages\/([a-z]+\.js)"/) || [])[1];
-  let code = "";
+  const script = (html.match(/src="\/assets\/js\/pages\/([a-z0-9-]+\.js)"/) || [])[1];
   if (script) {
-    code = fs.readFileSync(path.join(root, "assets/js/pages", script), "utf8");
-    keys.push(...[...code.matchAll(/\bt\("([a-zA-Z0-9_.]+)"\)/g)].map((m) => m[1]));
-    keys.push(...[...code.matchAll(/setError\(t, "[a-z-]+", "([a-z_]+)"\)/g)].map((m) => "error." + m[1]));
+    // Das Seitenskript und alle Module, die es (auch über andere Module) lädt
+    for (const file of scriptAndImports("assets/js/pages/" + script)) {
+      const code = fs.readFileSync(path.join(root, file), "utf8");
+      keys.push(...[...code.matchAll(/\bt\("([a-zA-Z0-9_.]+)"\)/g)].map((m) => m[1]));
+      keys.push(...[...code.matchAll(/setError\(t, "[a-z-]+", "([a-z_]+)"\)/g)].map((m) => "error." + m[1]));
+      // Schlüssel, die als Text in einem Aufruf stehen (z. B. action(..., "users.confirm.ban", ...)): Thema.Name
+      keys.push(...[...code.matchAll(/"((?:users|roles|permissions|audit|twofactor|admin|value)\.[A-Za-z0-9.]*[A-Za-z0-9])"/g)].map((m) => m[1]));
+      // Schlüssel, die zur Laufzeit aus Präfix und Wert entstehen (t("users.col." + name)): Präfix muss es geben
+      // (i18n.js selbst bleibt außen vor: Es übersetzt Fehlercodes nur dort, wo eine Fehlermeldung gesetzt wurde)
+      if (file.endsWith("shared/i18n.js")) continue;
+      for (const m of code.matchAll(/\bt\("([a-zA-Z0-9_.]+\.)" \+/g)) {
+        if (![...available].some((k) => k.startsWith(m[1]))) fail(`${page}: kein Text mit Präfix ${m[1]} (${file})`);
+      }
+    }
   }
   for (const k of new Set(keys)) if (!available.has(k)) fail(`${page}: Text ${k} fehlt in den geladenen Themen (${files.join(", ")})`);
 }
 
 // Die Skripte laden nur Dateien, die es gibt
-for (const f of fs.readdirSync(path.join(root, "assets/js/pages"))) {
-  const code = fs.readFileSync(path.join(root, "assets/js/pages", f), "utf8");
-  for (const m of code.matchAll(/from "(\/assets\/[^"]+)"/g)) {
-    if (!fs.existsSync(path.join(root, m[1]))) fail(`pages/${f}: Import ${m[1]} gibt es nicht`);
+for (const dir of ["pages", "shared", "admin"]) {
+  for (const f of fs.readdirSync(path.join(root, "assets/js", dir))) {
+    const code = fs.readFileSync(path.join(root, "assets/js", dir, f), "utf8");
+    for (const m of code.matchAll(/from "(\/assets\/[^"]+)"/g)) {
+      if (!fs.existsSync(path.join(root, m[1]))) fail(`${dir}/${f}: Import ${m[1]} gibt es nicht`);
+    }
   }
 }
 

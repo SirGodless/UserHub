@@ -37,3 +37,8 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .check input { margin-top: 5px; }
 
 a.button[aria-disabled="true"] { opacity: .5; cursor: not-allowed; }
+
+/* Hinweisfelder, Erfolgsmeldung und gefährliche Aktionen (Admin-Dashboard, 2FA-Seite) */
+.info { border: 1px solid var(--accent); border-radius: 8px; padding: 10px 12px; margin-bottom: 16px; }
+.success { min-height: 1.5em; margin-top: 12px; }
+button.danger { background: transparent; color: var(--danger); border-color: var(--danger); }

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Administration</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+<body class="wide" data-title-key="admin.title" data-i18n-files="common fields errors admin admin-users admin-roles admin-permissions admin-audit">
+<main>
+  <div class="topbar">
+    <span class="brand">UserHub <span class="muted" data-i18n="admin.heading">Administration</span></span>
+    <nav class="inline" aria-label="Navigation">
+      <a href="/" data-i18n="admin.nav.hub">Back to hub</a>
+      <a href="/account/2fa" data-i18n="admin.nav.twofactor">Two-factor settings</a>
+      <button type="button" id="logout" class="small secondary" data-i18n="action.logout">Sign out</button>
+      <label for="lang" class="visually-hidden" data-i18n="lang.label">Language</label>
+      <select id="lang"><option value="en">English</option><option value="de">Deutsch</option></select>
+    </nav>
+  </div>
+
+  <p id="twofactor-banner" class="info" hidden>
+    <span data-i18n="admin.twofactorNeeded"></span>
+    <a href="/account/2fa" data-i18n="admin.twofactorLink">Set up two-factor authentication</a>
+  </p>
+  <p id="none" class="muted" hidden data-i18n="admin.none"></p>
+
+  <div id="tabs" class="tabs" role="tablist"></div>
+  <p id="notice" role="status"></p>
+  <div id="panel" class="card"></div>
+</main>
+<script type="module" src="/assets/js/pages/admin.js"></script>
+</body>
+</html>

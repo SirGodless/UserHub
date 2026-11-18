@@ -15,6 +15,12 @@ function storedLang() {
   }
 }
 
+// Seiten mit selbst gebauten Inhalten (Tabellen, Listen) hängen sich hier an und zeichnen sich bei Sprachwechsel neu
+const listeners = [];
+export function onLangChange(fn) {
+  listeners.push(fn);
+}
+
 export function getLang() {
   return current;
 }
@@ -36,6 +42,7 @@ export async function setLang(lang) {
   }
   document.documentElement.lang = lang;
   applyTranslations();
+  for (const fn of listeners) fn(lang);
 }
 
 export async function initI18n() {

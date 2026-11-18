@@ -1,0 +1,18 @@
+{
+  "admin.title": "Administration",
+  "admin.heading": "Administration",
+  "admin.nav.hub": "Back to hub",
+  "admin.nav.twofactor": "Two-factor settings",
+  "admin.twofactorNeeded": "Admin functions need two-factor authentication.",
+  "admin.twofactorLink": "Set up two-factor authentication",
+  "admin.none": "Your account has no admin functions.",
+  "admin.tab.users": "Users",
+  "admin.tab.roles": "Roles",
+  "admin.tab.permissions": "Rights",
+  "admin.tab.audit": "Log",
+  "value.number": "Number",
+  "value.unlimited": "Unlimited",
+  "value.notSet": "not set",
+  "value.granted": "granted",
+  "value.permission": "Right"
+}

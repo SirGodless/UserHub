@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Two-factor authentication</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/setup.css">
+</head>
+<body data-title-key="twofactor.title" data-i18n-files="common fields errors password setup twofactor">
+<main>
+  <div class="topbar">
+    <span class="brand">UserHub</span>
+    <div>
+      <a href="/" data-i18n="twofactor.nav.hub">Back to hub</a>
+      <label for="lang" class="visually-hidden" data-i18n="lang.label">Language</label>
+      <select id="lang"><option value="en">English</option><option value="de">Deutsch</option></select>
+    </div>
+  </div>
+  <div class="card">
+    <h1 data-i18n="twofactor.heading">Two-factor authentication</h1>
+    <p id="status" class="muted" role="status"></p>
+    <p id="mandatory" class="info" hidden data-i18n="twofactor.mandatory"></p>
+
+    <!-- Aus: Einrichten, Schritt 1 (Passwort) -->
+    <form id="start-form" hidden novalidate>
+      <p data-i18n="twofactor.start.intro"></p>
+      <label for="start-password" data-i18n="field.password">Password</label>
+      <input id="start-password" type="password" autocomplete="current-password" required>
+      <label class="check"><input type="checkbox" data-show-password="start-password"><span data-i18n="field.showPassword">Show password</span></label>
+      <p id="start-error" class="error" role="alert"></p>
+      <button type="submit" data-i18n="twofactor.start.button">Set up</button>
+    </form>
+
+    <!-- Aus: Einrichten, Schritt 2 (QR-Code und Code) -->
+    <form id="confirm-form" hidden novalidate>
+      <p class="muted" data-i18n="setup.totp.intro"></p>
+      <div id="qr" class="qr" role="img" data-i18n-aria-label="setup.totp.qr.alt"></div>
+      <p class="muted" data-i18n="setup.totp.manual"></p>
+      <p id="secret" class="secret"></p>
+      <label for="confirm-code" data-i18n="field.totpCode">6 digit code</label>
+      <input id="confirm-code" class="code" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="6" autocomplete="one-time-code" required>
+      <p id="confirm-error" class="error" role="alert"></p>
+      <button type="submit" data-i18n="twofactor.confirm.button">Turn on two-factor authentication</button>
+    </form>
+
+    <!-- Neue Wiederherstellungscodes (nach Einrichten oder Erneuern), einmal sichtbar -->
+    <section id="codes-box" hidden>
+      <h2 data-i18n="twofactor.codes.heading">Recovery codes</h2>
+      <p><strong data-i18n="twofactor.codes.warning"></strong></p>
+      <ol id="codes" class="codes"></ol>
+      <div class="actions">
+        <button type="button" id="copy" class="secondary" data-i18n="action.copy">Copy codes</button>
+        <button type="button" id="download" class="secondary" data-i18n="action.download">Download as text file</button>
+      </div>
+    </section>
+
+    <!-- An: Codes erneuern und abschalten -->
+    <section id="manage" hidden>
+      <form id="regen-form" novalidate>
+        <h2 data-i18n="twofactor.regen.heading">New recovery codes</h2>
+        <p class="muted" data-i18n="twofactor.regen.intro"></p>
+        <label for="regen-password" data-i18n="field.password">Password</label>
+        <input id="regen-password" type="password" autocomplete="current-password" required>
+        <label for="regen-code" data-i18n="twofactor.codeOrRecovery">Code from your app or a recovery code</label>
+        <input id="regen-code" class="code" type="text" autocomplete="one-time-code" autocapitalize="none" spellcheck="false" required>
+        <p id="regen-error" class="error" role="alert"></p>
+        <button type="submit" data-i18n="twofactor.regen.button">Create new recovery codes</button>
+      </form>
+
+      <form id="disable-form" novalidate>
+        <h2 data-i18n="twofactor.disable.heading">Turn off two-factor authentication</h2>
+        <p class="muted" data-i18n="twofactor.disable.intro"></p>
+        <label for="disable-password" data-i18n="field.password">Password</label>
+        <input id="disable-password" type="password" autocomplete="current-password" required>
+        <label for="disable-code" data-i18n="twofactor.codeOrRecovery">Code from your app or a recovery code</label>
+        <input id="disable-code" class="code" type="text" autocomplete="one-time-code" autocapitalize="none" spellcheck="false" required>
+        <p id="disable-error" class="error" role="alert"></p>
+        <button type="submit" class="danger" id="disable-button" data-i18n="twofactor.disable.button">Turn off</button>
+      </form>
+    </section>
+  </div>
+</main>
+<script type="module" src="/assets/js/pages/twofactor.js"></script>
+</body>
+</html>

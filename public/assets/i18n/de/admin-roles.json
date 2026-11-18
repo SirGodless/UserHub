@@ -1,0 +1,16 @@
+{
+  "roles.title": "Rollen",
+  "roles.hint": "Rollen sind Live-Gruppen: Eine Änderung gilt sofort für alle Mitglieder.",
+  "roles.name": "Name der neuen Rolle",
+  "roles.create": "Rolle anlegen",
+  "roles.builtin": "eingebaut",
+  "roles.members": "Mitglieder",
+  "roles.allAdmin": "Enthält automatisch alle Verwaltungsrechte.",
+  "roles.removePermission": "Entfernen",
+  "roles.setPermission": "Recht setzen",
+  "roles.rename": "Umbenennen",
+  "roles.renamePrompt": "Neuer Name",
+  "roles.delete": "Rolle löschen",
+  "roles.confirmDelete": "Diese Rolle löschen? Mitglieder verlieren ihre Rechte.",
+  "roles.deleted": "Rolle gelöscht."
+}

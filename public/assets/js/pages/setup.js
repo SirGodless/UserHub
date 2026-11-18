@@ -2,7 +2,8 @@
 // Die Seite zeigt nur Formular, QR-Code und die Wiederherstellungscodes.
 import { initPasswordToggles } from "/assets/js/shared/password-toggle.js";
 import { initI18n, getLang, t } from "/assets/js/shared/i18n.js";
-import qrcode from "/assets/vendor/qrcode-esm.js";
+import { renderQr } from "/assets/js/shared/qr.js";
+import { showCodes, initCodeButtons } from "/assets/js/shared/recovery-codes.js";
 
 const token = location.pathname.split("/")[2] || "";
 const api = (path) => `/api/setup/${encodeURIComponent(token)}${path}`;
@@ -65,25 +66,13 @@ $("step-account").addEventListener("submit", async (e) => {
     return setError("account-error", res.data.error || "server_error");
   }
   secret = res.data.secret;
-  renderQr(res.data.issuer, secret);
+  renderQr($("qr"), res.data.issuer, account.username.trim().toLowerCase(), secret);
   $("secret").textContent = secret.match(/.{1,4}/g).join(" ");
   $("totp").value = "";
   setError("totp-error", null);
   show("step-totp");
   $("totp").focus();
 });
-
-function renderQr(issuer, base32) {
-  const label = encodeURIComponent(`${issuer}:${account.username.trim().toLowerCase()}`);
-  const uri = `otpauth://totp/${label}?secret=${base32}&issuer=${encodeURIComponent(issuer)}` +
-    "&algorithm=SHA1&digits=6&period=30";
-  const qr = qrcode(0, "M");
-  qr.addData(uri);
-  qr.make();
-  // SVG als Dokument parsen statt innerHTML zu benutzen
-  const svg = new DOMParser().parseFromString(qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true }), "image/svg+xml");
-  $("qr").replaceChildren(document.importNode(svg.documentElement, true));
-}
 
 $("totp-back").addEventListener("click", () => show("step-account"));
 
@@ -122,28 +111,9 @@ $("step-totp").addEventListener("submit", async (e) => {
 let recoveryCodes = [];
 function renderCodes(codes) {
   recoveryCodes = codes;
-  $("codes").replaceChildren(...codes.map((c) => {
-    const li = document.createElement("li");
-    li.textContent = c;
-    return li;
-  }));
+  showCodes($("codes"), codes);
 }
-
-$("copy").addEventListener("click", async () => {
-  try {
-    await navigator.clipboard.writeText(recoveryCodes.join("\n"));
-    $("copy").textContent = t("action.copied");
-  } catch { /* Zwischenablage nicht erlaubt: Nutzer kann die Codes markieren */ }
-});
-
-$("download").addEventListener("click", () => {
-  const blob = new Blob([recoveryCodes.join("\n") + "\n"], { type: "text/plain" });
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = "recovery-codes.txt";
-  a.click();
-  URL.revokeObjectURL(a.href);
-});
+initCodeButtons($("copy"), $("download"), () => recoveryCodes);
 
 // Weiter erst, wenn bestätigt wurde, dass die Codes gesichert sind
 $("saved").addEventListener("change", () => {

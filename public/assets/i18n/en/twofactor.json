@@ -1,0 +1,22 @@
+{
+  "twofactor.title": "Two-factor authentication",
+  "twofactor.heading": "Two-factor authentication",
+  "twofactor.nav.hub": "Back to hub",
+  "twofactor.status.on": "Two-factor authentication is on.",
+  "twofactor.status.off": "Two-factor authentication is off.",
+  "twofactor.status.codesLeft": "Unused recovery codes",
+  "twofactor.mandatory": "Your account has admin rights, so two-factor authentication is required and cannot be turned off.",
+  "twofactor.start.intro": "Confirm your password to start. You need an authenticator app on your phone.",
+  "twofactor.start.button": "Set up",
+  "twofactor.confirm.button": "Turn on two-factor authentication",
+  "twofactor.codes.heading": "Recovery codes",
+  "twofactor.codes.warning": "Save these codes now. They are shown only once and each works one time.",
+  "twofactor.codeOrRecovery": "Code from your app or a recovery code",
+  "twofactor.regen.heading": "New recovery codes",
+  "twofactor.regen.intro": "The old codes stop working.",
+  "twofactor.regen.button": "Create new recovery codes",
+  "twofactor.disable.heading": "Turn off two-factor authentication",
+  "twofactor.disable.intro": "Afterwards your password alone is enough to sign in. Your other sessions end.",
+  "twofactor.disable.button": "Turn off",
+  "twofactor.disable.confirm": "Really turn off two-factor authentication?"
+}
