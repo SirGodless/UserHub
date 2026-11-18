@@ -1,0 +1,17 @@
+{
+  "profile.title": "Profil",
+  "profile.heading": "Profil",
+  "profile.account": "Konto",
+  "profile.username": "Username",
+  "profile.language.heading": "Sprache",
+  "profile.language.intro": "Gilt für die Oberfläche und für Mails an dich.",
+  "profile.language.saved": "Sprache gespeichert.",
+  "profile.password.heading": "Passwort ändern",
+  "profile.password.current": "Aktuelles Passwort",
+  "profile.password.new": "Neues Passwort",
+  "profile.password.button": "Passwort ändern",
+  "profile.password.saved": "Passwort geändert. Deine anderen Sitzungen wurden beendet.",
+  "profile.more.heading": "Weiteres",
+  "profile.more.twofactor": "Zwei-Faktor-Anmeldung und Wiederherstellungscodes",
+  "profile.more.links": "Einladungslinks"
+}

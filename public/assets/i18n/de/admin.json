@@ -17,5 +17,6 @@
   "value.permission": "Recht",
   "admin.tab.links": "Links",
   "admin.tab.settings": "Einstellungen",
-  "admin.nav.links": "Einladungslinks"
+  "admin.nav.links": "Einladungslinks",
+  "admin.tab.services": "Dienste"
 }

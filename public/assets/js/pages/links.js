@@ -5,6 +5,7 @@ import { api } from "/assets/js/shared/api.js";
 import { h } from "/assets/js/shared/dom.js";
 import { formatTime } from "/assets/js/shared/time.js";
 import { describeGrants, describeStatus } from "/assets/js/shared/grants.js";
+import { initShell, redrawShell } from "/assets/js/shared/shell.js";
 
 const $ = (id) => document.getElementById(id);
 let options = null;
@@ -120,8 +121,9 @@ function drawList() {
 
 async function start() {
   await initI18n();
+  if (!(await initShell())) return;
   await load();
-  onLangChange(() => { if (options) draw(); });
+  onLangChange(() => { redrawShell(); if (options) draw(); });
 }
 
 start();

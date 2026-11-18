@@ -1,0 +1,16 @@
+{
+  "services.title": "Services",
+  "services.hint": "Display name, address and accent color of each service. The accent color is used for the service's buttons in the hub. Later a service will be able to report it itself. New services are added with the auth-admin command for now.",
+  "services.empty": "No services yet.",
+  "services.key": "Key",
+  "services.name": "Display name",
+  "services.description": "Description",
+  "services.url": "Address to open",
+  "services.healthUrl": "Address for the status check",
+  "services.healthHint": "Checked every 60 seconds from the server. Empty means no status.",
+  "services.color": "Accent color",
+  "services.color.reset": "Use default",
+  "services.preview": "Preview",
+  "services.save": "Save",
+  "services.saved": "Saved."
+}

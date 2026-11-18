@@ -5,6 +5,7 @@ import { api, setError } from "/assets/js/shared/api.js";
 import { initPasswordToggles } from "/assets/js/shared/password-toggle.js";
 import { renderQr } from "/assets/js/shared/qr.js";
 import { showCodes, initCodeButtons } from "/assets/js/shared/recovery-codes.js";
+import { initShell, redrawShell } from "/assets/js/shared/shell.js";
 
 const $ = (id) => document.getElementById(id);
 let me = null;
@@ -91,11 +92,12 @@ async function start() {
   await initI18n();
   initPasswordToggles();
   initCodeButtons($("copy"), $("download"), () => recoveryCodes);
+  if (!(await initShell())) return;
   const res = await call("GET", "/api/auth/me");
   if (!res.ok) return;
   me = res.data;
   await refresh();
-  onLangChange(() => { if (status) draw(); });
+  onLangChange(() => { redrawShell(); if (status) draw(); });
 }
 
 start();

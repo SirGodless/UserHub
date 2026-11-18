@@ -62,5 +62,11 @@
   "error.link_unknown": "This link does not exist.",
   "error.link_not_active": "This link is not active any more.",
   "error.invite_limits_invalid": "These values do not fit together. The longest validity is 30 days, the default and the shorter maximum cannot be longer than the longest.",
-  "error.block_unknown": "This block does not exist any more."
+  "error.block_unknown": "This block does not exist any more.",
+  "error.service_unknown": "This service does not exist.",
+  "error.service_name_invalid": "The name needs 1 to 60 characters.",
+  "error.service_description_invalid": "The description can have at most 200 characters.",
+  "error.service_url_invalid": "The address must start with https:// or http:// and include a host.",
+  "error.service_health_url_invalid": "The status address must start with https:// or http:// and include a host.",
+  "error.service_color_invalid": "The color must look like #2f81f7 (six hex digits)."
 }

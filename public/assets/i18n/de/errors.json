@@ -62,5 +62,11 @@
   "error.link_unknown": "Diesen Link gibt es nicht.",
   "error.link_not_active": "Dieser Link ist nicht mehr aktiv.",
   "error.invite_limits_invalid": "Diese Werte passen nicht zusammen. Die längste Gültigkeit ist 30 Tage, Standard und das kürzere Maximum dürfen nicht länger sein.",
-  "error.block_unknown": "Diese Sperre gibt es nicht mehr."
+  "error.block_unknown": "Diese Sperre gibt es nicht mehr.",
+  "error.service_unknown": "Diesen Dienst gibt es nicht.",
+  "error.service_name_invalid": "Der Name braucht 1 bis 60 Zeichen.",
+  "error.service_description_invalid": "Die Beschreibung darf höchstens 200 Zeichen haben.",
+  "error.service_url_invalid": "Die Adresse muss mit https:// oder http:// beginnen und einen Host enthalten.",
+  "error.service_health_url_invalid": "Die Adresse für den Status muss mit https:// oder http:// beginnen und einen Host enthalten.",
+  "error.service_color_invalid": "Die Farbe muss wie #2f81f7 aussehen (sechs Hexziffern)."
 }

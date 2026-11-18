@@ -15,5 +15,8 @@
   "link.backToSignin": "Zurück zur Anmeldung",
   "action.setPassword": "Neues Passwort setzen",
   "action.confirm": "E-Mail-Adresse bestätigen",
-  "action.logout": "Abmelden"
+  "action.logout": "Abmelden",
+  "theme.label": "Darstellung",
+  "theme.light": "Hell",
+  "theme.dark": "Dunkel"
 }

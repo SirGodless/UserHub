@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex">
+  <title>Profile</title>
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/layout.css">
+  <link rel="stylesheet" href="/assets/css/forms.css">
+  <link rel="stylesheet" href="/assets/css/setup.css">
+  <script src="/assets/js/shared/theme.js"></script>
+</head>
+<body class="app" data-title-key="profile.title" data-i18n-files="common errors fields password shell profile">
+<div class="shell">
+  <aside id="sidebar" class="sidebar"></aside>
+  <main class="content">
+    <header class="bar"><h1 data-i18n="profile.heading">Profile</h1>
+      <div class="right">
+        <div class="seg" role="group" data-i18n-aria-label="theme.label"><button type="button" data-set-theme="light" data-i18n="theme.light">Light</button><button type="button" data-set-theme="dark" data-i18n="theme.dark">Dark</button></div>
+      </div></header>
+    <section class="card">
+      <h2 class="first" data-i18n="profile.language.heading">Language</h2>
+      <p class="muted" data-i18n="profile.language.intro"></p>
+      <label for="profile-language" class="visually-hidden" data-i18n="profile.language.heading">Language</label>
+      <select id="profile-language"><option value="en">English</option><option value="de">Deutsch</option></select>
+      <p id="language-saved" class="success" hidden role="status" data-i18n="profile.language.saved"></p>
+    </section>
+
+    <form id="password-form" class="card" novalidate>
+      <h2 class="first" data-i18n="profile.password.heading">Change password</h2>
+      <label for="current" data-i18n="profile.password.current">Current password</label>
+      <input id="current" type="password" autocomplete="current-password" required>
+      <label for="new" data-i18n="profile.password.new">New password</label>
+      <input id="new" type="password" autocomplete="new-password" required aria-describedby="password-hint">
+      <p id="password-hint" class="muted small" data-i18n="password.hint"></p>
+      <label class="check"><input type="checkbox" data-show-password="current new"><span data-i18n="field.showPassword">Show password</span></label>
+      <p class="muted small" data-i18n="password.guidance"></p>
+      <p id="password-error" class="error" role="alert"></p>
+      <p id="password-saved" class="success" hidden role="status" data-i18n="profile.password.saved"></p>
+      <button type="submit" data-i18n="profile.password.button">Change password</button>
+    </form>
+
+    <h2 data-i18n="profile.more.heading">More</h2>
+    <div class="rows">
+      <a class="row" href="/account/2fa"><b data-i18n="profile.more.twofactor">Two-factor authentication and recovery codes</b></a>
+      <a class="row" href="/account/links"><b data-i18n="profile.more.links">Invitation links</b></a>
+    </div>
+  </main>
+</div>
+<script type="module" src="/assets/js/pages/profile.js"></script>
+</body>
+</html>

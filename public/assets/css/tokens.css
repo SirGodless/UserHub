@@ -1,17 +1,22 @@
-/* Farben, Radien und Schriften. Dark Mode ist Standard. Ein Light Mode wird später als zweiter Satz
-   dieser Variablen ergänzt, sonst ändert sich nichts. */
-:root {
+/* Farben und Maße. Dunkel und Hell hängen an data-theme (gesetzt von js/shared/theme.js), neutrale Grautöne, Indigo als
+   Akzent. Dienste haben zusätzlich eine eigene Farbe (--svc), die pro Dienst per Skript gesetzt wird. */
+:root, [data-theme="dark"] {
   color-scheme: dark;
-  --bg: #14161f;
-  --surface: #1e2130;
-  --surface-border: #343a54;
-  --text: #eceef7;
-  --text-muted: #a9aec6;
-  --accent: #8ab4ff;
-  --accent-text: #0d1220;
-  --danger: #ff9a9a;
-  --focus: #ffd479;
-  --radius: 12px;
+  --bg: #141414; --side: #101010; --surface: #1a1a1a; --text: #ececec; --muted: #a3a3a3;
+  --line: #2a2a2a; --line-strong: #454545; --hover: #1f1f1f; --current: #262626;
+  --accent: #8c99ff; --accent-text: #0d0d0d; --link: #a9b3ff; --focus: #ffd479;
+  --ok: #5ee08f; --down: #f2b04a; --danger: #ff9a9a;
+}
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f4f4f4; --side: #ececec; --surface: #ffffff; --text: #161616; --muted: #595959;
+  --line: #dcdcdc; --line-strong: #b5b5b5; --hover: #e8e8e8; --current: #e0e0e0;
+  --accent: #3a49d6; --accent-text: #ffffff; --link: #2f3dc0; --focus: #8a4b00;
+  --ok: #1a7a3a; --down: #9a5b00; --danger: #b3261e;
+}
+:root {
+  --r: 5px; --r-card: 8px;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  --svc: var(--accent); --svc-text: var(--accent-text);
 }

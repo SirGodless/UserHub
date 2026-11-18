@@ -1,0 +1,16 @@
+{
+  "services.title": "Dienste",
+  "services.hint": "Anzeigename, Adresse und Akzentfarbe jedes Dienstes. Die Akzentfarbe gilt für die Knöpfe des Dienstes im Hub. Später soll ein Dienst sie selbst melden können. Neue Dienste legst du vorerst mit dem Befehl auth-admin an.",
+  "services.empty": "Noch keine Dienste.",
+  "services.key": "Schlüssel",
+  "services.name": "Anzeigename",
+  "services.description": "Beschreibung",
+  "services.url": "Adresse zum Öffnen",
+  "services.healthUrl": "Adresse für die Statusprüfung",
+  "services.healthHint": "Wird alle 60 Sekunden vom Server geprüft. Leer heißt kein Status.",
+  "services.color": "Akzentfarbe",
+  "services.color.reset": "Standard nutzen",
+  "services.preview": "Vorschau",
+  "services.save": "Speichern",
+  "services.saved": "Gespeichert."
+}

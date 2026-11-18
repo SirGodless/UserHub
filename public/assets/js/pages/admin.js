@@ -9,9 +9,11 @@ import { renderPermissions } from "/assets/js/admin/permissions.js";
 import { renderAudit } from "/assets/js/admin/audit.js";
 import { renderLinks } from "/assets/js/admin/links.js";
 import { renderSettings } from "/assets/js/admin/settings.js";
+import { renderServices } from "/assets/js/admin/services.js";
+import { initShell, redrawShell } from "/assets/js/shared/shell.js";
 
 const $ = (id) => document.getElementById(id);
-const renderers = { users: renderUsers, roles: renderRoles, permissions: renderPermissions, links: renderLinks, audit: renderAudit, settings: renderSettings };
+const renderers = { users: renderUsers, roles: renderRoles, permissions: renderPermissions, services: renderServices, links: renderLinks, audit: renderAudit, settings: renderSettings };
 let current = null;
 
 function drawTabs() {
@@ -31,8 +33,7 @@ async function open(section) {
 
 async function start() {
   await initI18n();
-  const me = await api("GET", "/api/auth/me");
-  if (!me.ok) { location.href = "/login?continue=" + encodeURIComponent("/admin"); return; }
+  if (!(await initShell())) return;
   const overview = await api("GET", "/api/admin/overview");
   if (!overview.ok) { notice(t("error." + (overview.data.error || "server_error")), true); return; }
   state.sections = overview.data.sections;
@@ -40,12 +41,7 @@ async function start() {
   if (!state.sections.length) { $("none").hidden = false; return; }
   const wanted = location.hash.slice(1);
   await open(state.sections.includes(wanted) ? wanted : state.sections[0]);
-  onLangChange(() => { drawTabs(); if (current) renderers[current]($("panel")); });
+  onLangChange(() => { redrawShell(); drawTabs(); if (current) renderers[current]($("panel")); });
 }
-
-$("logout").addEventListener("click", async () => {
-  await api("POST", "/api/auth/logout", {});
-  location.href = "/login";
-});
 
 start();
