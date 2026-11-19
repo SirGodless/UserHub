@@ -60,6 +60,10 @@ function card(s, again) {
   const [urlLabel, url] = field(id("url"), t("services.url"), s.url, { placeholder: "https://vault.example.net" });
   const [healthLabel, health] = field(id("health"), t("services.healthUrl"), s.healthUrl, { placeholder: "https://vault.example.net/alive" });
 
+  const [logoutLabel, logout] = field(id("logout"), t("services.logoutUrl"), s.backchannelLogoutUri, { placeholder: "https://vault.example.net/auth/backchannel-logout" });
+  const mode = h("select", { id: id("mode") }, ...["new_tab", "embedded"].map((m) => h("option", { value: m, text: t("services.openMode." + m) })));
+  mode.value = s.openMode;
+
   const picker = h("input", { type: "color", id: id("picker"), value: isHexColor(s.accentColor) ? s.accentColor : DEFAULT_PICKER, "aria-label": t("services.color") });
   const hex = h("input", { type: "text", id: id("hex"), value: s.accentColor || "", placeholder: "#2f81f7", maxlength: "7", autocomplete: "off", spellcheck: "false" });
   const preview = h("span", { class: "btn svc", "aria-hidden": "true", text: t("services.preview") });
@@ -79,7 +83,8 @@ function card(s, again) {
 
   const save = h("button", { type: "button", text: t("services.save"), onclick: async () => {
     const r = await call("PATCH", "/api/admin/services/" + s.key,
-      { displayName: name.value, description: desc.value, url: url.value, healthUrl: health.value, accentColor: hex.value, accentLocked: lock.checked });
+      { displayName: name.value, description: desc.value, url: url.value, healthUrl: health.value, accentColor: hex.value, accentLocked: lock.checked,
+        openMode: mode.value, backchannelLogoutUri: logout.value });
     if (!r.ok) return showError(r);
     await again();
     notice(t("services.saved"));
@@ -114,6 +119,8 @@ function card(s, again) {
     h("h3", {}, s.displayName, " ", h("span", { class: "muted small", text: s.key })),
     h("div", { class: "svc-form" }, h("div", {}, nameLabel, name), h("div", {}, descLabel, desc), h("div", {}, urlLabel, url),
       h("div", {}, healthLabel, health, h("p", { class: "muted small", text: t("services.healthHint") })),
+      h("div", {}, h("label", { for: id("mode"), text: t("services.openMode") }), mode, h("p", { class: "muted small", text: t("services.openMode.hint") })),
+      h("div", {}, logoutLabel, logout, h("p", { class: "muted small", text: t("services.logoutUrl.hint") })),
       h("div", { class: "wide" }, h("label", { for: id("hex"), text: t("services.color") }), h("div", { class: "color-row" }, picker, hex, reset, preview), lockRow,
         h("p", { class: "muted small", text: t("services.lock.hint") }), reported)),
     h("div", { class: "actions" }, save),

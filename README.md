@@ -5,7 +5,7 @@ Admins, Anmelden, Passwort vergessen, E-Mail bestätigen, das Admin-Dashboard (`
 Einfaches HTML, CSS und JavaScript ohne Framework. Die verbindliche Spezifikation steht in
 `../AuthenticationService/CLAUDE.md`.
 
-**Stand:** Etappe 7 plus "Dienste anbinden" (Reiter Services legt Dienste an, zeigt Client-Geheimnis einmal, Rücksprung-Adressen, Anbindungs-Angaben). Die Darstellung (hell, dunkel, wie das Gerät) stellt jeder auf der Profilseite ein (kein Umschalter auf den Seiten).  Neu: Hub mit Seitenmenü, Profilseite (`/account`), Akzentfarbe pro Dienst, Hell/Dunkel, neue Gestaltung "Raster" auf allen Seiten. Dazu kommen die Seite "Kein Zugang" (`/access-denied`), der Rücksprung nach dem Login zu einem Dienst oder zu `/admin` und `/account/2fa`.
+**Stand:** Etappe 8: Dienste lassen sich im Hub einbetten (Seite `/app/<dienst>`, Öffnungsmodus und Logout-Adresse im Reiter Services). Davor Etappe 7 plus "Dienste anbinden" (Reiter Services legt Dienste an, zeigt Client-Geheimnis einmal, Rücksprung-Adressen, Anbindungs-Angaben). Die Darstellung (hell, dunkel, wie das Gerät) stellt jeder auf der Profilseite ein (kein Umschalter auf den Seiten).  Neu: Hub mit Seitenmenü, Profilseite (`/account`), Akzentfarbe pro Dienst, Hell/Dunkel, neue Gestaltung "Raster" auf allen Seiten. Dazu kommen die Seite "Kein Zugang" (`/access-denied`), der Rücksprung nach dem Login zu einem Dienst oder zu `/admin` und `/account/2fa`.
 
 ## Ordnerübersicht
 

@@ -90,3 +90,9 @@ h2.first { margin-top: 0; }
 .content > .card, .content > form.card { margin-bottom: 1rem; max-width: 640px; }
 .side-note { padding: 0 .6rem; margin: 0; }
 .table-wrap + p { margin-top: .7rem; }
+
+/* Eingebetteter Dienst (/app/<dienst>): Kopfzeile und ein Rahmen, der die restliche Höhe füllt */
+.content.embed { padding: 0; max-width: none; display: flex; flex-direction: column; height: 100vh; }
+.embed-bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem 1.2rem; border-bottom: 1px solid var(--line); }
+.embed-frame { flex: 1; width: 100%; border: 0; background: transparent; min-height: 0; }
+@media (max-width: 820px) { .content.embed { height: calc(100vh - 3.5rem); min-height: 28rem; } }

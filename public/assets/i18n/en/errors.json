@@ -68,5 +68,8 @@
   "error.service_description_invalid": "The description can have at most 200 characters.",
   "error.service_url_invalid": "The address must start with https:// or http:// and include a host.",
   "error.service_health_url_invalid": "The status address must start with https:// or http:// and include a host.",
-  "error.service_color_invalid": "The color must look like #2f81f7 (six hex digits)."
+  "error.service_color_invalid": "The color must look like #2f81f7 (six hex digits).",
+  "error.service_open_mode_invalid": "The opening mode must be new tab or embedded.",
+  "error.service_logout_url_invalid": "The sign-out address must start with https:// or http:// and include a host.",
+  "error.service_embedded_needs_url": "Embedding needs an address to open."
 }

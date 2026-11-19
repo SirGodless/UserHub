@@ -30,9 +30,15 @@ function navLink(href, text, current) {
   return h("a", { href, class: current ? "current" : null, "aria-current": current ? "page" : null }, h("span", { text }));
 }
 
+// Eingebettete Dienste öffnen im Hub (/app/<dienst>), alle anderen in einem neuen Tab
+const isEmbedded = (s) => s.openMode === "embedded" && Boolean(s.url);
+
 function serviceLink(s) {
+  const embedded = isEmbedded(s);
   const dot = h("span", { class: `dot ${s.status}`, title: t("shell.status." + s.status), role: "img", "aria-label": t("shell.status." + s.status) });
-  const link = h("a", { class: "service", href: s.url || null, target: s.url ? "_blank" : null, rel: s.url ? "noopener noreferrer" : null },
+  const current = embedded && location.pathname === "/app/" + s.key;
+  const link = h("a", { class: "service" + (current ? " current" : ""), "aria-current": current ? "page" : null,
+    href: embedded ? "/app/" + s.key : s.url || null, target: !embedded && s.url ? "_blank" : null, rel: !embedded && s.url ? "noopener noreferrer" : null },
     h("span", { class: "svc-name" }, h("span", { class: "svc-swatch", "aria-hidden": "true" }), h("span", { text: s.name })), dot);
   applyServiceColor(link, s.accentColor);
   return link;

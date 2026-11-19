@@ -68,5 +68,8 @@
   "error.service_description_invalid": "Die Beschreibung darf höchstens 200 Zeichen haben.",
   "error.service_url_invalid": "Die Adresse muss mit https:// oder http:// beginnen und einen Host enthalten.",
   "error.service_health_url_invalid": "Die Adresse für den Status muss mit https:// oder http:// beginnen und einen Host enthalten.",
-  "error.service_color_invalid": "Die Farbe muss wie #2f81f7 aussehen (sechs Hexziffern)."
+  "error.service_color_invalid": "Die Farbe muss wie #2f81f7 aussehen (sechs Hexziffern).",
+  "error.service_open_mode_invalid": "Der Öffnungsmodus muss neuer Tab oder eingebettet sein.",
+  "error.service_logout_url_invalid": "Die Adresse für Abmelde-Meldungen muss mit https:// oder http:// beginnen und einen Host enthalten.",
+  "error.service_embedded_needs_url": "Zum Einbetten braucht es eine Adresse zum Öffnen."
 }
