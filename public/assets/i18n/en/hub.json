@@ -25,5 +25,6 @@
   "hub.account.admin": "Administration",
   "hub.account.admin.value": "USERS, ROLES, RIGHTS, SERVICES, LOG",
   "hub.account.mail": "Mail server",
-  "hub.legend.openNote": "Services open in a new tab. A service marked offline can still be opened."
+  "hub.legend.openNote": "Services open in a new tab or inside the hub, as set by the administrator. A service marked offline can still be opened.",
+  "hub.embed.newTab": "Open in new tab"
 }

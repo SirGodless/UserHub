@@ -38,5 +38,11 @@
   "services.connection.discovery": "Discovery",
   "services.connection.scopes": "Scopes",
   "services.connection.right": "Recht für den Zugang",
-  "services.connection.prefix": "Rechte dieses Dienstes"
+  "services.connection.prefix": "Rechte dieses Dienstes",
+  "services.openMode": "Wie der Hub ihn öffnet",
+  "services.openMode.new_tab": "Neuer Tab (Link)",
+  "services.openMode.embedded": "Im Hub (eingebettet)",
+  "services.openMode.hint": "Einbetten klappt nur, wenn der Dienst es erlaubt: Er muss frame-ancestors mit der Hub-Adresse senden und unter einer Subdomain der Hub-Domain laufen. Siehe docs/INTEGRATION.md, Abschnitt Einbetten.",
+  "services.logoutUrl": "Adresse für Abmelde-Meldungen (Back-Channel-Logout)",
+  "services.logoutUrl.hint": "Meldet sich jemand im Hub ab, schickt der Hub dieser Adresse ein signiertes Logout-Token, damit der Dienst seine Sitzung beendet. Leer heißt keine Meldung."
 }

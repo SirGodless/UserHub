@@ -62,8 +62,10 @@ function serviceRow(s) {
   const status = h("td", {}, h("span", { class: `tag ${s.status}`, text: t("shell.status." + s.status) }));
   const checked = h("td", { class: "mono", text: ago(s.checkedAt) });
   // Ein nicht erreichbarer Dienst bleibt öffenbar (die Prüfung kann irren), der Knopf ist dann nur umrandet.
+  const embedded = s.openMode === "embedded" && s.url;
   const open = s.url
-    ? h("a", { class: "btn svc" + (s.status === "down" ? " outline" : ""), href: s.url, target: "_blank", rel: "noopener noreferrer", text: t("hub.open") })
+    ? h("a", { class: "btn svc" + (s.status === "down" ? " outline" : ""), href: embedded ? "/app/" + s.key : s.url,
+      target: embedded ? null : "_blank", rel: embedded ? null : "noopener noreferrer", text: t("hub.open") })
     : h("span", { class: "btn svc disabled", "aria-disabled": "true", title: t("hub.noUrl"), text: t("hub.open") });
   const action = h("td", { class: "act" }, open);
   row.append(name, status, checked, action);

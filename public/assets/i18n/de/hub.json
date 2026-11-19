@@ -25,5 +25,6 @@
   "hub.account.admin": "Verwaltung",
   "hub.account.admin.value": "BENUTZER, ROLLEN, RECHTE, DIENSTE, PROTOKOLL",
   "hub.account.mail": "Mailserver",
-  "hub.legend.openNote": "Dienste öffnen sich in einem neuen Tab. Auch ein als offline markierter Dienst lässt sich öffnen."
+  "hub.legend.openNote": "Dienste öffnen in einem neuen Tab oder im Hub, je nach Einstellung des Administrators. Auch ein als offline markierter Dienst lässt sich öffnen.",
+  "hub.embed.newTab": "In neuem Tab öffnen"
 }

@@ -38,5 +38,11 @@
   "services.connection.discovery": "Discovery",
   "services.connection.scopes": "Scopes",
   "services.connection.right": "Right needed for access",
-  "services.connection.prefix": "Rights of this service"
+  "services.connection.prefix": "Rights of this service",
+  "services.openMode": "How the hub opens it",
+  "services.openMode.new_tab": "New tab (link)",
+  "services.openMode.embedded": "Inside the hub (embedded)",
+  "services.openMode.hint": "Embedded needs the service to allow it: it must send frame-ancestors with the hub address and live on a subdomain of the hub domain. See docs/INTEGRATION.md, section Embedding.",
+  "services.logoutUrl": "Address for sign-out notices (back-channel logout)",
+  "services.logoutUrl.hint": "When someone signs out of the hub, the hub sends this address a signed logout token so the service ends its session. Empty means no notice."
 }
