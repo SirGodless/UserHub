@@ -17,7 +17,7 @@ Kennzeichnung wie dort: **[E]** entschieden, **[A]** Annahme, **[O]** offen, **[
 - [A] Etappe 6 beginnt mit 2 bis 3 Stilvorschlägen als statische Mockup-Seiten (Login und Hub-Startseite), Joshua wählt. Davor schlichtes, funktionales Styling mit CSS-Variablen. Light Mode später.
 - [E] Die UI-Sprache ist pro Account einstellbar. Standard ist Englisch, als Alternative gibt es Deutsch. Alle Texte liegen in Sprachdateien (`en` und `de`), nichts steht fest im Code. Die Details (Umschalter vor dem Login, Registrierung, Mails) stehen in der Hauptdatei, Abschnitt 8.
 - [A] Keine externen Schriften oder CDNs, alles selbst hosten. Grundlegende Barrierefreiheit (Kontrast, Tastaturbedienung).
-- [A] Die Login-Seite wird unter `auth.anfall.net` ausgeliefert. Caddy verteilt dort die Pfade an Backend und UI (siehe Hauptdatei, Abschnitt 2). Login und Admin dürfen nicht in Frames eingebettet werden.
+- [A] Die Login-Seite wird unter `anfall.net` ausgeliefert. Caddy verteilt dort die Pfade an Backend und UI (siehe Hauptdatei, Abschnitt 2). Login und Admin dürfen nicht in Frames eingebettet werden.
 
 ## Arbeitsregeln
 
